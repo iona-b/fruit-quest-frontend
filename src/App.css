@@ -36,3 +36,34 @@
     transform: rotate(360deg);
   }
 }
+
+.navbar {
+  background-color: powderblue;
+}
+
+/* .login-button {
+  float: right;
+} */
+
+.game-area {
+  background-color: lightgray;
+  text-align: center;
+}
+
+.leader-board {
+  float: right;
+  height: 400px;
+  width: 300px;
+  background-color: powderblue;
+  margin: 10px;
+}
+
+.game {
+  float: left;
+  height: 608px;
+  width: 992px;
+  margin: 50px;
+  border: 5px;
+  border-color: red;
+  border-style: solid;
+}

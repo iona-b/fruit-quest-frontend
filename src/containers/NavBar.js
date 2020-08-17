@@ -1,5 +1,6 @@
 import React from 'react';
-import Home from '../components/Home.js';
+// import Game from '../components/Game.js';
+import Game from '../main.js';
 import Login from '../components/Login.js';
 import HowToPlay from '../components/HowToPlay.js';
 import Profile from '../components/PlayerProfileCard.js';
@@ -15,10 +16,10 @@ const NavBar = () =>  {
       <h1>NavBar Container</h1>
        <ul>
          <li>
-           <NavLink to='/' exact>Login</NavLink>
+           <NavLink to='/' exact className="login-button">Login</NavLink>
          </li>
          <li>
-           <NavLink to='/home'>Play</NavLink>
+           <NavLink to='/play'>Play</NavLink>
          </li>
          <li>
            <NavLink to='/howtoplay'>How to Play</NavLink>
@@ -33,7 +34,7 @@ const NavBar = () =>  {
       </header>
       <Switch>
         <Route exact path='/' component={Login}/>
-        <Route path='/home' component={Home}/>
+        <Route path='/play' component={Game}/>
         <Route path='/howtoplay' component={HowToPlay}/>
         <Route path='/profile' component={Profile}/>
         <Route path='/logout' exact component={null}/>
