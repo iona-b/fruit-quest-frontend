@@ -47,7 +47,8 @@
 
 .game-area {
   background-color: lightgray;
-  text-align: center;
+  padding: 10px
+  /* text-align: center; */
 }
 
 .leader-board {
