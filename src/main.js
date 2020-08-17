@@ -25,6 +25,12 @@ class Test extends React.Component {
       // LevelOneTest
       width: 992,
       height: 608,
+      physics: {
+        default: 'arcade',
+        arcade: {
+          gravity: { y: 4000 }
+        }
+      },
       type: Phaser.AUTO,
       scene: [
         Level1

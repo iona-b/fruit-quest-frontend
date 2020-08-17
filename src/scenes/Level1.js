@@ -25,20 +25,19 @@ export default class Level1 extends Phaser.Scene {
         this.pinkMan = this.add.sprite(20, 350, 'pink man', 'Jump (32x32).png')
         // this.scene.start('game')
 
-        const debugGraphics = this.add.graphics().setAlpha(0.75);
-        tileset.renderDebug(debugGraphics, {
-            tileColor: null,
-            collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255),
-            faceColor: new Phaser.Display.Color(40, 39, 37, 255)
-        })
+        // const debugGraphics = this.add.graphics().setAlpha(0.75);
+        // tileset.renderDebug(debugGraphics, {
+        //     tileColor: null,
+        //     collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255),
+        //     faceColor: new Phaser.Display.Color(40, 39, 37, 255)
+        // })
 
-        // this.physics.add.existing(this.pinkMan)   
-        // this.pinkMan.body.setCollideWorldBounds(true, 1, 1) 
+        this.physics.add.existing(this.pinkMan)   
+        this.pinkMan.body.setCollideWorldBounds(true, 1, 1) 
         this.physics.add.collider(this.pinkMan, tileset)
     }
 
     update() {
-        const body = this.pinkMan.body
         if (this.cursors.up.isDown) {
             this.pinkMan.y -= 10
         } else if (this.cursors.down.isDown) {
