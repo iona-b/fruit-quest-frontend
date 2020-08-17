@@ -1,5 +1,4 @@
 import React from 'react';
-// import Game from '../components/Game.js';
 import Game from '../main.js';
 import Login from '../components/Login.js';
 import HowToPlay from '../components/HowToPlay.js';
