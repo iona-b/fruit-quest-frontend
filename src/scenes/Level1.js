@@ -9,10 +9,11 @@ export default class Level1 extends Phaser.Scene {
     preload() {
 
         this.load.image('tiles', 'level-1-terrain.png')
-        this.load.tilemapTiledJSON('map', 'level-1.json')
+        this.load.tilemapTiledJSON('map', 'level-2.json')
         this.load.atlas('guy', 'virtual-guy.png', 'virtual-guy.json')
 
         this.cursors = this.input.keyboard.createCursorKeys()
+        this.scale.setGameSize(992, 608)
 
     }
 
@@ -20,9 +21,16 @@ export default class Level1 extends Phaser.Scene {
 
         // Map
         const map = this.make.tilemap({ key: 'map'})
-        const terrain = map.addTilesetImage('terrain', 'tiles', 16, 16, 0, 0)
+        const terrain = map.addTilesetImage('terrain', 'tiles', 16, 16)
         const tileset = map.createStaticLayer('terrain', terrain)
         tileset.setCollisionByProperty({collides : true})
+
+        // const debugGraphics = this.add.graphics().setAlpha(0.75);
+        // tileset.renderDebug(debugGraphics, {
+        //     tileColor: null,
+        //     collidingTileColor: new Phaser.Display.Color(243, 134, 48, 255),
+        //     faceColor: new Phaser.Display.Color(40, 39, 37, 255)
+        // })
         
         //Character
         this.guy = this.add.sprite(20, 350, 'guy', 'run-1.png')
@@ -52,6 +60,9 @@ export default class Level1 extends Phaser.Scene {
         this.physics.add.existing(this.guy)   
         this.guy.body.setCollideWorldBounds(true) 
         this.physics.add.collider(this.guy, tileset)
+        
+        this.camera = this.cameras.main.startFollow(this.guy, true)
+        this.camera.setBounds(0, 0, 1984, 608)
 
     }
 

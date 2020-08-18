@@ -58,13 +58,3 @@
   background-color: powderblue;
   margin: 10px;
 }
-
-.game {
-  float: left;
-  height: 608px;
-  width: 992px;
-  margin: 50px;
-  border: 5px;
-  border-color: red;
-  border-style: solid;
-}
