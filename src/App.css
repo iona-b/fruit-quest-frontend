@@ -38,7 +38,7 @@
 }
 
 .navbar {
-  background-color: powderblue;
+  background-color: black;
 }
 
 /* .login-button {
@@ -57,4 +57,8 @@
   width: 300px;
   background-color: powderblue;
   margin: 10px;
+}
+
+#logo {
+  width: 200px;
 }

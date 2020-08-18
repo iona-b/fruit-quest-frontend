@@ -10,6 +10,7 @@ export default class Level1 extends Phaser.Scene {
 
         this.load.image('tiles', 'level-1-terrain.png')
         this.load.image('cherries', 'cherries.png')
+        this.load.image('cherry', 'cherry-object.png')
         this.load.image('strawberries', 'strawberries.png')
         this.load.image('bananas', 'bananas.png')
         this.load.image('trophy', 'trophy.png')
@@ -35,11 +36,12 @@ export default class Level1 extends Phaser.Scene {
         tileset.setCollisionByProperty({collides : true})
 
         // Objects
+
         const cherries = map.addTilesetImage('cherries', 'cherries', 16, 16)
-        const cherriesLayer = map.createDynamicLayer('cherries', cherries)
+        this.cherriesLayer = map.createDynamicLayer('cherries', cherries)
 
         const strawberries = map.addTilesetImage('strawberries', 'strawberries', 16, 16)
-        const strawberriesLayer = map.createDynamicLayer('strawberries', strawberries)
+        this.strawberriesLayer = map.createDynamicLayer('strawberries', strawberries)
 
         const bananas = map.addTilesetImage('bananas', 'bananas', 16, 16)
         const bananasLayer = map.createDynamicLayer('bananas', bananas)
@@ -74,7 +76,7 @@ export default class Level1 extends Phaser.Scene {
 
         this.physics.add.existing(this.guy)   
         this.guy.body.setCollideWorldBounds(true) 
-        this.physics.add.collider(this.guy, tileset)
+        this.physics.add.collider(this.guy, tileset)        
         
         this.camera = this.cameras.main.startFollow(this.guy, true)
         this.camera.setBounds(0, 0, 1984, 608)
@@ -84,21 +86,17 @@ export default class Level1 extends Phaser.Scene {
     update() {
 
         const body = this.guy.body
-        // const speed = 100
 
         if (this.cursors.up.isDown) {
             this.guy.y -= 10
             this.guy.anims.play('guy-jumping', true)
         } else if (this.cursors.right.isDown) {
             this.guy.x += 5
-            // this.guy.body.setVelocity(-speed, 0);
             this.guy.anims.play('guy-walking-right', true)
         } else if (this.cursors.left.isDown) {
             this.guy.x -= 5
-            // this.guy.body.setVelocity(speed, 0);
             this.guy.anims.play('guy-walking-left', true)
         } else {
-            // this.guy.body.setVelocity(0, 0)
             this.guy.anims.play('guy-idle', true)
         }
 

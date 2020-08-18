@@ -1,5 +1,6 @@
 import Phaser from 'phaser'
 import Level1 from './scenes/Level1'
+import Level3 from './scenes/Level3'
 import React from 'react'
 import { IonPhaser } from '@ion-phaser/react'
 
@@ -14,12 +15,12 @@ class Main extends React.Component {
       physics: {
         default: 'arcade',
         arcade: {
-          gravity: { y: 3000 }
+          gravity: { y: 1000 }
         }
       },
       type: Phaser.AUTO,
       scene: [
-        Level1
+        Level3
       ]
     }
   }
