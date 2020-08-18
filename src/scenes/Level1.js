@@ -76,7 +76,7 @@ export default class Level1 extends Phaser.Scene {
             this.guy.anims.play('guy-jumping', true)
         } else if (this.cursors.right.isDown) {
             this.guy.x += 5
-            // this.guy.body.setVelocity(-speed, 0);
+            this.guy.body.setVelocity(-speed, 0);
             this.guy.anims.play('guy-walking-right', true)
         } else if (this.cursors.left.isDown) {
             this.guy.x -= 5
