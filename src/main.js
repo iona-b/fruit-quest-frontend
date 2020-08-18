@@ -8,7 +8,8 @@ class Main extends React.Component {
   state = {
     initialize: true,
     game: {
-      width: 992,
+      parent: 'game-container',
+      width: 1984,
       height: 608,
       physics: {
         default: 'arcade',
