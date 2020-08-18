@@ -28,7 +28,9 @@ export default class Level1 extends Phaser.Scene {
         this.guy = this.add.sprite(20, 350, 'guy', 'run-1.png')
         this.anims.create({
             key: 'guy-idle',
-            frames: [{ key: 'guy', frame: 'run-1.png' }]
+            frames: this.anims.generateFrameNames('guy', { start: 1, end: 11, prefix: 'idle-', suffix: '.png' }),
+            repeat: -1,
+            frameRate: 15
         })
         this.anims.create({
             key: 'guy-walking-right',
