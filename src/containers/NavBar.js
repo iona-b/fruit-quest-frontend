@@ -32,7 +32,8 @@ const NavBar = () =>  {
       </header>
       <Switch>
         <Route exact path='/' component={Login}/>
-        <Route path='/start' component={Game}/>
+        <Route path='/start' component={Start}/>
+        <Route path='/play' component={Game}/>
         <Route path='/play' component={Game}/>
         <Route path='/howtoplay' component={HowToPlay}/>
         <Route path='/profile' component={Profile}/>
