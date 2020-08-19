@@ -8,7 +8,7 @@ export default class Level3 extends Phaser.Scene {
 
     preload() {
 
-        this.load.image('tiles', 'level-1-terrain.png')
+        this.load.image('tiles', 'terrain.png')
         this.load.tilemapTiledJSON('map', 'level-3.json')
         this.load.atlas('guy', 'virtual-guy.png', 'virtual-guy.json')
         this.load.image('brown background', 'brown-background.png')

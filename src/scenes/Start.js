@@ -6,11 +6,9 @@ const StartScene = () => {
 
   return (
     <div className='start'>
-      <Link to='/play'>Start Game!</Link>
-      <Link to='/levelone'>Level One</Link>
-      <Link to='/leveltwo'>Level Two</Link>
-      <Link to='/levelthree'>Level Three</Link>
-      <Link to='/levelfour'>Level Four</Link>
+      <Link to='/play' >
+        <img src={require("../start-game-button.png")} alt='' id="start-game-button"/>
+      </Link>
     </div>
   )
 

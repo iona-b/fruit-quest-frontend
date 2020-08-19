@@ -8,15 +8,11 @@ export default class Level1 extends Phaser.Scene {
 
     preload() {
 
-        this.load.image('tiles', 'level-1-terrain.png')
-        this.load.image('cherries', 'cherries.png')
-        this.load.image('cherry', 'cherry-object.png')
-        this.load.image('strawberries', 'strawberries.png')
-        this.load.image('bananas', 'bananas.png')
-        this.load.image('trophy', 'trophy.png')
-        this.load.image('purple background', 'purple-background.png')
+        this.load.image('tiles', 'terrain.png')
         this.load.tilemapTiledJSON('map', 'level-2.json')
+        this.load.image('purple background', 'purple-background.png')
         this.load.atlas('guy', 'virtual-guy.png', 'virtual-guy.json')
+        this.load.image('cherry', 'cherry.png')
 
         this.cursors = this.input.keyboard.createCursorKeys()
         this.scale.setGameSize(992, 608)
@@ -35,22 +31,8 @@ export default class Level1 extends Phaser.Scene {
         const tileset = map.createStaticLayer('terrain', terrain)
         tileset.setCollisionByProperty({collides : true})
 
-        // Objects
-
-        const cherries = map.addTilesetImage('cherries', 'cherries', 16, 16)
-        this.cherriesLayer = map.createDynamicLayer('cherries', cherries)
-
-        const strawberries = map.addTilesetImage('strawberries', 'strawberries', 16, 16)
-        this.strawberriesLayer = map.createDynamicLayer('strawberries', strawberries)
-
-        const bananas = map.addTilesetImage('bananas', 'bananas', 16, 16)
-        const bananasLayer = map.createDynamicLayer('bananas', bananas)
-
-        const trophy = map.addTilesetImage('trophy', 'trophy', 16, 16)
-        const trophyLayer = map.createDynamicLayer('trophy', trophy)
-        
         //Character
-        this.guy = this.add.sprite(20, 350, 'guy', 'run-1.png')
+        this.guy = this.physics.add.sprite(20, 350, 'guy', 'run-1.png')
         this.anims.create({
             key: 'guy-idle',
             frames: this.anims.generateFrameNames('guy', { start: 1, end: 11, prefix: 'idle-', suffix: '.png' }),
@@ -81,26 +63,57 @@ export default class Level1 extends Phaser.Scene {
         this.camera = this.cameras.main.startFollow(this.guy, true)
         this.camera.setBounds(0, 0, 1984, 608)
 
+
+        // Objects
+        const cherryLayer = map.getObjectLayer('fruit')['objects']
+        const cherry = this.physics.add.staticGroup()
+        cherryLayer.forEach(object => {
+            let c = cherry.create(object.x, object.y, 'cherry')
+            c.setScale(object.width/16, object.height/16); 
+            c.setOrigin(0); 
+            c.body.width = object.width; 
+            c.body.height = object.height; 
+        })
+        
+        // Object and Character Collision
+        this.physics.add.overlap(this.guy, cherry, this.collectFruit, null, this)
+
+        this.fruitScore = 0
+        this.text = this.add.text(570, 70, `Fruit: ${this.fruitScore}`, {
+            fontSize: '20px',
+            fill: '#ffffff'
+          });
+        this.text.setScrollFactor(0);
+
+    }
+
+    collectFruit (player, strawberry) {
+        strawberry.disableBody(true, true)
+        this.fruitScore ++
+        this.text.setText(`Fruits: ${this.fruitScore}`)
+        return false
     }
 
     update() {
 
-        const body = this.guy.body
-
-        if (this.cursors.up.isDown) {
-            this.guy.y -= 10
-            this.guy.anims.play('guy-jumping', true)
-        } else if (this.cursors.right.isDown) {
-            this.guy.x += 5
-            this.guy.anims.play('guy-walking-right', true)
-        } else if (this.cursors.left.isDown) {
-            this.guy.x -= 5
-            this.guy.anims.play('guy-walking-left', true)
-        } else {
-            this.guy.anims.play('guy-idle', true)
-        }
-
-    } 
+        if (this.cursors.left.isDown) {
+              this.guy.setVelocityX(-160)
+              this.guy.anims.play('guy-walking-left', true)
+          }
+          else if (this.cursors.right.isDown) {
+              this.guy.setVelocityX(160)
+              this.guy.anims.play('guy-walking-right', true)
+          } 
+          else {
+              this.guy.setVelocityX(0)
+  
+              this.guy.anims.play('guy-idle', true)
+          }
+  
+          if (this.cursors.space.isDown || this.cursors.up.isDown) {
+              this.guy.setVelocityY(-330)
+          }
+      } 
 
 
 }
