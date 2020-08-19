@@ -20,7 +20,7 @@ class Main extends React.Component {
       },
       type: Phaser.AUTO,
       scene: [
-        Level3
+        Level1
       ]
     }
   }

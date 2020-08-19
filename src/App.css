@@ -47,12 +47,19 @@
   width: 500px;
 }
 
+#login-form-header {
+  font-family: 'Raleway', sans-serif;
+  font-size: 25px;
+  color: white;
+}
+
 .login-form {
   height: 300px;
   width: 1000px;
   background-color: powderblue;
   margin-left: 20px;
   padding: 20px;
+  text-align: center;
 }
 
 

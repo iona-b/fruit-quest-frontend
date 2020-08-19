@@ -9,10 +9,12 @@ const PlayerProfileCard = () => {
                 <div className="profile-section-divs" id="high-score-div">
                     <img src={require("../high-score-logo.png")} alt='' className="profile-logos" id="high-score-logo"/>
                     <h2 className="profile-headings">High Score</h2>
+                    <h2 className="profile-headings">50</h2>
                 </div>
                 <div className="profile-section-divs" id="level-div">
                     <img src={require("../level-logo.png")} alt='' className="profile-logos" id="level-logo"/>
-                    <h2 className="profile-headings"> Level</h2>
+                    <h2 className="profile-headings">Total Score</h2>
+                    <h2 className="profile-headings">350</h2>
                 </div>
                 <div className="profile-section-divs" id="delete-profile-div">
                     <img src={require("../delete-profile-logo.png")} alt='' className="profile-logos" id="delete-profile-logo"/>
