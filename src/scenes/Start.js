@@ -6,7 +6,9 @@ const StartScene = () => {
 
   return (
     <div className='start'>
-      <Link to='/play'>Start Game!</Link>
+      <Link to='/play' >
+        <img src={require("../start-game-button.png")} alt='' id="start-game-button"/>
+      </Link>
     </div>
   )
 

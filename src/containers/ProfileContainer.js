@@ -1,10 +1,11 @@
 import React from 'react';
+import PlayerProfileCard from '../components/PlayerProfileCard';
 
 const ProfileContainer = () =>  {
 
   return (
     <div className="profile">
-      <h1>Profile Container</h1>
+      <PlayerProfileCard />
     </div>
   );
 }
