@@ -1,11 +1,11 @@
 import React from 'react';
 import LeaderBoardContainer from './LeaderBoardContainer';
 
-const GameAreaContainer = () =>  {
+const GameAreaContainer = ({topTen}) =>  {
 
   return (
     <div className="game-area">
-      <LeaderBoardContainer />
+      <LeaderBoardContainer topTen={topTen}/>
     </div>
   );
 }

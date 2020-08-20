@@ -25,7 +25,7 @@ export default class Level3 extends Phaser.Scene {
         const map = this.make.tilemap({ key: 'map'})
 
         const background = map.addTilesetImage('brown', 'brown background', 16, 16)
-        const backgroundLayer = map.createStaticLayer('background', background)
+        map.createStaticLayer('background', background)
 
         const terrain = map.addTilesetImage('terrain', 'tiles', 16, 16)
         const tileset = map.createStaticLayer('terrain', terrain)

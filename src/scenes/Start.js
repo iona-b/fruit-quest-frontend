@@ -1,9 +1,7 @@
 import React from 'react'
-import {Route, Switch, Link,withRouter} from 'react-router-dom'
-import Main from '../main.js';
+import {Link} from 'react-router-dom'
 
 const StartScene = () => {
-
   return (
     <div className='start'>
       <Link to='/play' >
@@ -11,7 +9,6 @@ const StartScene = () => {
       </Link>
     </div>
   )
-
 }
 
 export default StartScene
