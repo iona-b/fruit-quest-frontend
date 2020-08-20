@@ -21,7 +21,6 @@ class App extends React.Component {
       this.setState({
         allUsers: json
       })
-      console.log(json)
       let userTotals = json.map(user=> {
         let userScores = user.scores.map(eachScore => eachScore.score)
         let total = userScores.reduce((a, b) => {
@@ -56,6 +55,7 @@ class App extends React.Component {
    .then(json => {
      if(!json.error){
        this.setState({user:{id:json.id, username:json.username}}, () => {
+         console.log(this.state.user)
          this.props.history.push('/start')
        })
        localStorage.setItem('user_id', json.id);
@@ -68,7 +68,7 @@ class App extends React.Component {
  
   handleSignUp = (event, userDetails) => {
    event.preventDefault()
-
+   console.log(this.state.user)
     fetch('http://localhost:3000/users', {
       method: 'POST',
       headers: {
@@ -97,16 +97,16 @@ class App extends React.Component {
     })
       .then(res => res.json())
       .then(json => {
-        let updatedUser =
-          {user: {
-            id:0,
-            username:''
-          }}
+        let updatedUser ={
+          id: 0,
+          username: ""
+        }
         this.setState ({
           user: updatedUser
         })
         this.props.history.push('/')
       })
+      .then(this.fetchScores())
   }
 
   handleLogOut = () => {
