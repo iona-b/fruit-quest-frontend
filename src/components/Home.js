@@ -26,7 +26,7 @@ const Home = (props) => {
             ) : (
                 <div id ="login-signup-section">
                     <div className='start'>
-                        <Link to='/play' >
+                        <Link to='/start' >
                             <img src={require("../start-game-button.png")} alt='' id="home-start-game-button"/>
                         </Link>
                     </div>

@@ -12,6 +12,7 @@ class Level1 extends Phaser.Scene {
         this.load.tilemapTiledJSON('map', 'level-2.json')
         this.load.image('purple background', 'purple-background.png')
         this.load.atlas('guy', 'virtual-guy.png', 'virtual-guy.json')
+        this.load.atlas('cherry objects', 'cherry-objects.png', 'cherry-objects.json')
         this.load.image('cherry', 'cherry.png')
 
         this.cursors = this.input.keyboard.createCursorKeys()
@@ -62,14 +63,23 @@ class Level1 extends Phaser.Scene {
         this.camera.setBounds(0, 0, 1984, 608)
 
         // Objects
+
+        this.anims.create({
+          key: 'cherry objects',
+          frames: this.anims.generateFrameNames('cherry objects', { start: 1, end: 16, prefix: 'cherry-', suffix: '.png'}),
+          repeat: -1,
+          frameRate: 15
+        })
+
         const cherryLayer = map.getObjectLayer('fruit')['objects']
         const cherry = this.physics.add.staticGroup()
         cherryLayer.forEach(object => {
-            let c = cherry.create(object.x, object.y, 'cherry')
+            let c = cherry.create(object.x, object.y, 'cherry objects')
             c.setScale(object.width/16, object.height/16); 
             c.setOrigin(0); 
             c.body.width = object.width; 
-            c.body.height = object.height; 
+            c.body.height = object.height;
+            c.play('cherry objects', true) 
         })
         
         // Object and Character Collision
@@ -83,8 +93,8 @@ class Level1 extends Phaser.Scene {
         this.text.setScrollFactor(0);
     }
 
-    collectFruit (player, strawberry) {
-        strawberry.disableBody(true, true)
+    collectFruit (player, cherry) {
+        cherry.disableBody(true, true)
         this.fruitScore ++
         this.text.setText(`Fruits: ${this.fruitScore}`)
         return false

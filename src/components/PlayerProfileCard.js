@@ -1,7 +1,7 @@
 import React from 'react';
 
 const PlayerProfileCard = (props) => {
-    console.log(props)
+
     return (
         <div className="player-profile-card">
             <h2 id="player-profile-header">Hi there {props.user.username}!</h2>

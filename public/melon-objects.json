@@ -1,0 +1,423 @@
+{
+  "frames": {
+    "melon-13.png": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 22,
+        "h": 10
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 4,
+        "w": 22,
+        "h": 10
+      },
+      "sourceSize": {
+        "w": 31,
+        "h": 22
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "melon-14.png": {
+      "frame": {
+        "x": 22,
+        "y": 0,
+        "w": 22,
+        "h": 10
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 7,
+        "w": 22,
+        "h": 10
+      },
+      "sourceSize": {
+        "w": 29,
+        "h": 25
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "melon-15.png": {
+      "frame": {
+        "x": 44,
+        "y": 0,
+        "w": 22,
+        "h": 10
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 5,
+        "w": 22,
+        "h": 10
+      },
+      "sourceSize": {
+        "w": 34,
+        "h": 20
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "melon-12.png": {
+      "frame": {
+        "x": 66,
+        "y": 0,
+        "w": 20,
+        "h": 12
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 8,
+        "w": 20,
+        "h": 12
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 29
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "melon-16.png": {
+      "frame": {
+        "x": 0,
+        "y": 10,
+        "w": 20,
+        "h": 12
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 6,
+        "w": 20,
+        "h": 12
+      },
+      "sourceSize": {
+        "w": 28,
+        "h": 25
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "melon-17.png": {
+      "frame": {
+        "x": 20,
+        "y": 10,
+        "w": 20,
+        "h": 12
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 6,
+        "w": 20,
+        "h": 12
+      },
+      "sourceSize": {
+        "w": 31,
+        "h": 21
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "melon-10.png": {
+      "frame": {
+        "x": 40,
+        "y": 10,
+        "w": 18,
+        "h": 14
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 4,
+        "w": 18,
+        "h": 14
+      },
+      "sourceSize": {
+        "w": 29,
+        "h": 25
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "melon-11.png": {
+      "frame": {
+        "x": 0,
+        "y": 22,
+        "w": 18,
+        "h": 14
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 7,
+        "w": 18,
+        "h": 14
+      },
+      "sourceSize": {
+        "w": 35,
+        "h": 27
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "melon-6.png": {
+      "frame": {
+        "x": 18,
+        "y": 22,
+        "w": 18,
+        "h": 14
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 9,
+        "w": 18,
+        "h": 14
+      },
+      "sourceSize": {
+        "w": 33,
+        "h": 32
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "melon-1.png": {
+      "frame": {
+        "x": 86,
+        "y": 0,
+        "w": 18,
+        "h": 12
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 8,
+        "w": 18,
+        "h": 12
+      },
+      "sourceSize": {
+        "w": 25,
+        "h": 25
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "melon-2.png": {
+      "frame": {
+        "x": 104,
+        "y": 0,
+        "w": 18,
+        "h": 12
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 7,
+        "w": 18,
+        "h": 12
+      },
+      "sourceSize": {
+        "w": 25,
+        "h": 25
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "melon-3.png": {
+      "frame": {
+        "x": 122,
+        "y": 0,
+        "w": 18,
+        "h": 12
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 4,
+        "w": 18,
+        "h": 12
+      },
+      "sourceSize": {
+        "w": 23,
+        "h": 20
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "melon-4.png": {
+      "frame": {
+        "x": 140,
+        "y": 0,
+        "w": 18,
+        "h": 12
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 5,
+        "w": 18,
+        "h": 12
+      },
+      "sourceSize": {
+        "w": 31,
+        "h": 23
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "melon-5.png": {
+      "frame": {
+        "x": 158,
+        "y": 0,
+        "w": 18,
+        "h": 12
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 9,
+        "w": 18,
+        "h": 12
+      },
+      "sourceSize": {
+        "w": 30,
+        "h": 29
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "melon-7.png": {
+      "frame": {
+        "x": 176,
+        "y": 0,
+        "w": 16,
+        "h": 16
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 7,
+        "w": 16,
+        "h": 16
+      },
+      "sourceSize": {
+        "w": 25,
+        "h": 31
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "melon-8.png": {
+      "frame": {
+        "x": 58,
+        "y": 12,
+        "w": 16,
+        "h": 16
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 7,
+        "w": 16,
+        "h": 16
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 28
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "melon-9.png": {
+      "frame": {
+        "x": 36,
+        "y": 24,
+        "w": 16,
+        "h": 16
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 7,
+        "w": 16,
+        "h": 16
+      },
+      "sourceSize": {
+        "w": 31,
+        "h": 31
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.6",
+    "image": "melon-objects.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 192,
+      "h": 40
+    },
+    "scale": 1
+  }
+}

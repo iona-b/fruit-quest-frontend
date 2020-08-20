@@ -12,6 +12,7 @@ class Level3 extends Phaser.Scene {
         this.load.tilemapTiledJSON('map', 'level-3.json')
         this.load.atlas('guy', 'virtual-guy.png', 'virtual-guy.json')
         this.load.image('brown background', 'brown-background.png')
+        this.load.atlas('melon objects', 'melon-objects.png', 'melon-objects.json')
         this.load.image('melon', 'melon.png')
         this.cursors = this.input.keyboard.createCursorKeys()
         this.scale.setGameSize(992, 608)
@@ -54,14 +55,23 @@ class Level3 extends Phaser.Scene {
         })
 
         // Objects
+
+        this.anims.create({
+          key: 'melon objects',
+          frames: this.anims.generateFrameNames('melon objects', { start: 1, end: 17, prefix: 'melon-', suffix: '.png'}),
+          repeat: -1,
+          frameRate: 15
+        })
+
         const fruitLayer = map.getObjectLayer('foods')['objects']
         const melon = this.physics.add.staticGroup()
         fruitLayer.forEach(object => {
-            let s = melon.create(object.x, object.y, 'melon')
+            let s = melon.create(object.x, object.y, 'melon objects')
             s.setScale(object.width/16, object.height/16); 
             s.setOrigin(0); 
             s.body.width = object.width; 
             s.body.height = object.height; 
+            s.play('melon objects', true) 
         })
 
         this.physics.add.existing(this.guy)   

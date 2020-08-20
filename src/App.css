@@ -29,9 +29,7 @@
 }
 
 .navbar-buttons {
-  
   width: 75px;
-
 }
 
 
@@ -71,7 +69,6 @@
   padding-right: 20px;
   padding-bottom: 15px;
   padding-top: 15px;
-
   display: flex;
   justify-content: space-around;
   border-radius: 0px 0px 10px 10px;
@@ -79,7 +76,6 @@
 
 .login-signup-divs {
   position: relative;
-  top: 5px;
   text-align: center;
   display: inline-block;
 }
@@ -95,18 +91,19 @@
 }
 
 .login-signup-logos {
-  width: 200px;
+  width: 150px;
 }
 
 #sign-up-div {
   position: relative;
-  top: -8px;
+  top: 20px;
   right: 80px
 }
 
 #login-div {
   position: relative;
-  left: 90px
+  left: 90px;
+  top: 26px;
 }
 
 #home-start-game-button {
@@ -164,9 +161,53 @@
   margin-left: -420px;
 }
 
-.fruit-trail {
-  width: 500px;
-  margin-left: 250px;
+.start-section {
+  height: 500px;
+  width: 1000px;
+  background-color: powderblue;
+  margin-top: 20px;
+  margin-left: 10px;
+  padding: 20px;
+  font-family: 'Raleway', sans-serif;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+#start-section-heading {
+  font-family: 'Raleway', sans-serif;
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+#level-divs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: space-around;
+}
+
+.game-play-divs {
+  position: relative;
+  text-align: center;
+  height: 250px;
+  display: inline-block;
+  top: 40px;
+}
+
+.level-headings {
+  text-decoration: none; 
+  font-family: 'Raleway', sans-serif;
+  font-size: 25px;
+  color: white;
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+.game-play-logos {
+  width: 150px;
 }
 
 
@@ -244,21 +285,15 @@
 
 .profile-logos {
   width: 200px;
-  margin-left: 75px;
-  padding-left: 15px;
 }
 
-#delete-profile-logo{
+#delete-profile-div{
   cursor: pointer;
 }
 
 .profile-sections {
-  display: table-row;
-  padding-left: 20px;
-}
-
-.profile-section-divs {
-  display: table-cell;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
 }
 
 #player-profile-header {
@@ -272,7 +307,6 @@
   font-size: 25px;
   color: white;
   font-weight: bold;
-  padding-left: 90px;
 }
 
 
@@ -294,7 +328,8 @@
 }
 
 #arrow-keys {
-  width: 300px;
+  width:270px;
+  margin: 10px;
 }
 
 #how-to-play-header {
@@ -302,5 +337,5 @@
 }
 
 #how-to-play-text {
-  font-size: 30px;
+  font-size: 20px;
 }
