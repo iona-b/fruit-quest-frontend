@@ -1,7 +1,8 @@
 import Phaser from 'phaser';
+import React from 'react'
+import { IonPhaser } from '@ion-phaser/react'
 
-export default class Level3 extends Phaser.Scene {
-    
+class Level3 extends Phaser.Scene {
     constructor(){
         super('level3')
     }
@@ -13,14 +14,11 @@ export default class Level3 extends Phaser.Scene {
         this.load.atlas('guy', 'virtual-guy.png', 'virtual-guy.json')
         this.load.image('brown background', 'brown-background.png')
         this.load.image('melon', 'melon.png')
-
         this.cursors = this.input.keyboard.createCursorKeys()
         this.scale.setGameSize(992, 608)
-
     }
 
     create() {
-
         // Map
         const map = this.make.tilemap({ key: 'map'})
 
@@ -56,7 +54,6 @@ export default class Level3 extends Phaser.Scene {
             frames: [{ key: 'guy', frame: 'jump.png' }]
         })
 
-
         // Objects
         const fruitLayer = map.getObjectLayer('foods')['objects']
         const melon = this.physics.add.staticGroup()
@@ -67,7 +64,6 @@ export default class Level3 extends Phaser.Scene {
             s.body.width = object.width; 
             s.body.height = object.height; 
         })
-        
 
         this.physics.add.existing(this.guy)   
         this.guy.body.setCollideWorldBounds(true) 
@@ -84,9 +80,7 @@ export default class Level3 extends Phaser.Scene {
             fontSize: '20px',
             fill: '#ffffff'
           });
-        this.text.setScrollFactor(0);
-
-          
+        this.text.setScrollFactor(0);          
     }
     
     collectFruit (player, strawberry) {
@@ -96,32 +90,45 @@ export default class Level3 extends Phaser.Scene {
         return false
     }
 
-
     update() {
-
-      if (this.cursors.left.isDown)
-        {
+        if (this.cursors.left.isDown) {
             this.guy.setVelocityX(-160)
             this.guy.anims.play('guy-walking-left', true)
-        }
-        else if (this.cursors.right.isDown)
-        {
+        } else if (this.cursors.right.isDown) {
             this.guy.setVelocityX(160)
             this.guy.anims.play('guy-walking-right', true)
-
-        } 
-        else 
-        {
+        } else {
             this.guy.setVelocityX(0)
-
             this.guy.anims.play('guy-idle', true)
         }
-
-        if (this.cursors.space.isDown || this.cursors.up.isDown) // && this.guy.body.onFloor())
-        {
+        if (this.cursors.space.isDown || this.cursors.up.isDown) {
             this.guy.setVelocityY(-330)
         }
-    } 
+    }
+}
 
 
+export default class LevelThree extends React.Component {
+  state = {
+    game: {
+      parent: 'game-container',
+      width: 1984,
+      height: 608,
+      physics: {
+        default: 'arcade',
+        arcade: {
+          gravity: { y: 1000 }
+        }
+      },
+      type: Phaser.AUTO,
+      scene: [Level3]
+    }
+  }
+
+  render() {
+    const { game } = this.state
+    return (
+      <IonPhaser game={game} />
+    )
+  }
 }

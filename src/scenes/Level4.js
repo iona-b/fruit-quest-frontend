@@ -1,6 +1,8 @@
 import Phaser from 'phaser';
+import React from 'react'
+import { IonPhaser } from '@ion-phaser/react'
 
-export default class Level4 extends Phaser.Scene {
+class Level4 extends Phaser.Scene {
     constructor(){
         super({key: 'level4'})
     }
@@ -11,7 +13,6 @@ export default class Level4 extends Phaser.Scene {
         this.load.image('tiles', 'terrain.png')
         this.load.image('blue background', 'blue-background.png')
         this.load.image('banana', 'banana.png')
-
         this.cursors = this.input.keyboard.createCursorKeys()
         this.scale.setGameSize(992, 608)
     }
@@ -133,4 +134,29 @@ export default class Level4 extends Phaser.Scene {
             this.guy.setVelocityY(-330)
         }
     } 
+}
+
+export default class LevelFour extends React.Component {
+  state = {
+    game: {
+      parent: 'game-container',
+      width: 1984,
+      height: 608,
+      physics: {
+        default: 'arcade',
+        arcade: {
+          gravity: { y: 1000 }
+        }
+      },
+      type: Phaser.AUTO,
+      scene: [Level4]
+    }
+  }
+
+  render() {
+    const { game } = this.state
+    return (
+      <IonPhaser game={game} />
+    )
+  }
 }
