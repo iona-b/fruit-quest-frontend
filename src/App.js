@@ -11,6 +11,7 @@ class App extends React.Component {
       id: 0,
       username: "",
     },
+    currentUserScores: [],
     topTen: []
   }
 
@@ -18,10 +19,6 @@ class App extends React.Component {
     try {
       let res = await fetch('http://localhost:3000/users')
       let json = await res.json()
-      this.setState({
-        allUsers: json
-      })
-      console.log(json)
       let userTotals = json.map(user=> {
         let userScores = user.scores.map(eachScore => eachScore.score)
         let total = userScores.reduce((a, b) => {
@@ -97,6 +94,7 @@ class App extends React.Component {
     })
       .then(res => res.json())
       .then(json => {
+        console.log('profiledeleted', json)
         let updatedUser =
           {user: {
             id:0,
@@ -119,6 +117,16 @@ class App extends React.Component {
     })
   }
 
+  updateUser = () => {
+    fetch(`http://localhost:3000/users/${this.state.user.id}`)
+      .then(res => res.json())
+      .then(json => {
+        this.setState ({
+          currentUserScores: json.scores
+        })
+      })
+  }
+
   reloadBoard = () => {
     this.fetchScores()
   }
@@ -126,7 +134,7 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <NavBar handleLogin={this.handleLogin} handleSignUp={this.handleSignUp} user={this.state.user} deleteProfile={this.deleteProfile} handleLogOut={this.handleLogOut} reloadBoard={this.reloadBoard}/>
+        <NavBar handleLogin={this.handleLogin} handleSignUp={this.handleSignUp} user={this.state.user} currentUserScores={this.state.currentUserScores} deleteProfile={this.deleteProfile} handleLogOut={this.handleLogOut} updateUser={this.updateUser} reloadBoard={this.reloadBoard}/>
         <GameAreaContainer topTen={this.state.topTen}/>
       </div>
     );

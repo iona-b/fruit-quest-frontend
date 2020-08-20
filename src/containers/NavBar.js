@@ -4,22 +4,20 @@ import Start from '../scenes/Start';
 import Level2 from '../scenes/Level2';
 import Level3 from '../scenes/Level3';
 import Level4 from '../scenes/Level4';
-import GameOver from '../scenes/GameOver';
-import Game from '../main.js';
 import Home from '../components/Home';
 import Login from '../components/Login';
 import SignUp from '../components/SignUp';
 import HowToPlay from '../components/HowToPlay';
 import Profile from '../containers/ProfileContainer';
 import NotFound from '../components/NotFound';
-import {Route, Switch, Link, NavLink, withRouter, Redirect} from 'react-router-dom'
+import {Route, Switch, Link, NavLink, withRouter} from 'react-router-dom'
 
 
 class NavBar extends React.Component {
 
   renderLogin = () => <Login handleLogin={this.props.handleLogin}/>
   renderSignUp = () => <SignUp handleSignUp={this.props.handleSignUp}/>
-  renderProfile = () => <Profile deleteProfile={this.props.deleteProfile} user={this.props.user}/>
+  renderProfile = () => <Profile deleteProfile={this.props.deleteProfile} user={this.props.user} currentUserScores={this.props.currentUserScores}/>
   renderHome = () => <Home user={this.props.user}/>
 
   render(){
@@ -54,7 +52,7 @@ class NavBar extends React.Component {
           ) : null }
           {this.props.user.id !== 0 ? (
           <div className="navbar-divs">
-            <Link to='/profile' >
+            <Link to='/profile' onClick={this.props.updateUser}>
               <img src={require("../blueberry-button.png")} alt='' className="navbar-buttons" id="profile-button"/>
             </Link>
               <NavLink to='/profile' className="navbar-links">Profile</NavLink>

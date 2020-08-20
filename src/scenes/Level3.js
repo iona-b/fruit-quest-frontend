@@ -89,9 +89,62 @@ class Level3 extends Phaser.Scene {
             fontSize: '20px',
             fill: '#ffffff'
           });
-        this.text.setScrollFactor(0);          
+        this.text.setScrollFactor(0);
+
+        this.timeInSeconds = 30;
+        this.timerText = this.add.text(30, 20, `Time left: ${this.timeInSeconds}`, {
+            fontSize: '20px', 
+            fill: '#ffffff'
+        });
+        this.timerText.setScrollFactor(0);
+        this.timeEvent = this.time.addEvent({ delay: 1000, callback: this.countdown, callbackScope: this, loop: true})
     }
     
+    countdown() {
+      this.timeInSeconds -= 1
+      this.timerText.setText(`Time left: ${this.timeInSeconds}`)
+      if(this.timeInSeconds===25) {
+          this.timeEvent.paused = true
+          let userId = localStorage.getItem('user_id')
+          fetch('http://localhost:3000/scores', {
+              method: 'POST',
+              headers: {
+                  'Accept': 'application/json',
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify({
+                  score: this.fruitScore,
+                  user_id: userId,
+                  level_id: 2
+              })
+          })
+          .then(res => res.json())
+          .then(json => {
+
+              if(json.requirePatch) {
+                  fetch('http://localhost:3000/scores')
+                  .then(res => res.json())
+                  .then(json => {
+                      let scoreId = json.find(score => score.user_id == userId && score.level_id == 2).id
+                      fetch(`http://localhost:3000/scores/${scoreId}`, {
+                          method: 'PATCH',
+                          headers: {
+                              'Accept': 'application/json',
+                              'Content-Type': 'application/json'
+                          },
+                          body: JSON.stringify({
+                              score: this.fruitScore
+                          })
+                      })
+                      .catch(err => console.log('Level4.js Score Patch Error:', err))
+                  })
+                  .catch( err => console.log('Level4.js Score Fetch Error:', err))
+              } 
+          })
+          .catch(err => console.log('Level4.js Score Post Error:', err))
+      }
+    }
+
     collectFruit (player, melon) {
         melon.disableBody(true, true)
         this.fruitScore ++
