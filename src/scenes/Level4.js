@@ -1,8 +1,6 @@
 import Phaser from 'phaser';
 import React from 'react'
 import { IonPhaser } from '@ion-phaser/react'
-import {Redirect} from 'react-router-dom'
-
 
 class Level4 extends Phaser.Scene {
     constructor(){
@@ -91,30 +89,59 @@ class Level4 extends Phaser.Scene {
     countdown() {
         this.timeInSeconds -= 1
         this.timerText.setText(`Time left: ${this.timeInSeconds}`)
-        if(this.timeInSeconds===0) {
+        if(this.timeInSeconds===25) {
             this.timeEvent.paused = true
-            // <Redirect to='/start' />
-            // fetch('http://localhost3000/users/', {
-            //     method: 'POST',
-            //     headers: {
-            //         'Accept': 'application/json',
-            //         'Content-Type': 'application/json'
-            //     },
-            //     body: JSON.stringify(
-            //         score: this.fruitScore,
-            //         user:
-            //         level: 
-            //     )
-            // }
-            // .then(res => res.json())
-            // .then((data) => )
+            console.log('id in Level4:', localStorage.getItem('user_id'))
+            let userId = localStorage.getItem('user_id')
+            fetch('http://localhost:3000/scores', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    score: this.fruitScore,
+                    user_id: userId,
+                    level_id: 3
+                })
+            })
+            .then(res => res.json())
+            .then(json => {
+
+                if(json.requirePatch) {
+                    fetch('http://localhost:3000/scores')
+                    .then(res => res.json())
+                    .then(json => {
+                        let scoreId = json.find(score => score.user_id == userId && score.level_id == 3).id
+                        fetch(`http://localhost:3000/scores/${scoreId}`, {
+                            method: 'PATCH',
+                            headers: {
+                                'Accept': 'application/json',
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                score: this.fruitScore
+                            })
+                        })
+                        .then(res => res.json())
+                        .then(json => {
+                            // this.props.endGame()
+                        })
+                        .catch(err => console.log('Level4.js Score Patch Error:', err))
+                    })
+                    .catch( err => console.log('Level4.js Score Fetch Error:', err))
+                } 
+            })
+            .catch(err => console.log('Level4.js Score Post Error:', err))
         }
     }
     
     collectFruit(player, banana) {
-        banana.disableBody(true, true)
-        this.fruitScore ++
-        this.text.setText(`Fruits: ${this.fruitScore}`)
+        if(this.timeInSeconds>=26) {
+            banana.disableBody(true, true)
+            this.fruitScore ++
+            this.text.setText(`Fruits: ${this.fruitScore}`)
+        }
         return false
     }
 

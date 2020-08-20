@@ -4,30 +4,6 @@ import './App.css';
 import NavBar from './containers/NavBar.js';
 import GameAreaContainer from './containers/GameAreaContainer.js';
 
-
-// function App() {
-//   const [topTen, setTopTen] = useState([])
-
-//   const fetchScores = async () => {
-//     let res = await fetch('http://localhost:3000/users')
-//     let json = await res.json()
-//     let userTotals = json.map(user=> {
-//       let userScores = user.scores.map(eachScore => eachScore.score)
-//       let total = userScores.reduce((a, b) => {
-//         return  a + b
-//       }, 0)
-//       return {name: user.username, total: total}
-//     })
-//     const sortedTotals = userTotals.sort((a, b) => {return b.total - a.total})
-//     setTopTen(sortedTotals.slice(0, 10))
-//   }
-
-//   useEffect(() => {
-//     fetchScores()
-//   }, [])
-// }
-
-// export default App;
 class App extends React.Component {
 
   state={
@@ -39,19 +15,27 @@ class App extends React.Component {
   }
 
   fetchScores = async () => {
-    let res = await fetch('http://localhost:3000/users')
-    let json = await res.json()
-    let userTotals = json.map(user=> {
-      let userScores = user.scores.map(eachScore => eachScore.score)
-      let total = userScores.reduce((a, b) => {
-        return  a + b
-      }, 0)
-      return {name: user.username, total: total}
-    })
-    const sortedTotals = userTotals.sort((a, b) => {return b.total - a.total})
-    this.setState({
-      topTen: sortedTotals.slice(0, 10)
-    })
+    try {
+      let res = await fetch('http://localhost:3000/users')
+      let json = await res.json()
+      this.setState({
+        allUsers: json
+      })
+      console.log(json)
+      let userTotals = json.map(user=> {
+        let userScores = user.scores.map(eachScore => eachScore.score)
+        let total = userScores.reduce((a, b) => {
+          return  a + b
+        }, 0)
+        return {name: user.username, total: total}
+      })
+      const sortedTotals = userTotals.sort((a, b) => {return b.total - a.total})
+      this.setState({
+        topTen: sortedTotals.slice(0, 10)
+      })
+    } catch(err) {
+      console.log('App.js Fetch Users Error:', err)
+    }
   }
 
   componentDidMount() {
@@ -74,11 +58,12 @@ class App extends React.Component {
        this.setState({user:{id:json.id, username:json.username}}, () => {
          this.props.history.push('/start')
        })
-     }else {
+       localStorage.setItem('user_id', json.id);
+     } else {
        alert(json.error)
      }
    })
-   .catch(err => console.log(err))
+   .catch(err => console.log('App.js Login Error:', err))
   }
  
   handleSignUp = (event, userDetails) => {
@@ -98,11 +83,12 @@ class App extends React.Component {
         this.setState({user:{id:json.id, username:json.username}}, () => {
           this.props.history.push('/start')
         })
-      }else {
+        localStorage.setItem('user_id', json.id);
+      } else {
         alert(json.error)
       }
     })
-    .catch(err => console.log(err))
+    .catch(err => console.log('App.js Sign Up Error:', err))
   }
 
   deleteProfile = () => {
@@ -133,14 +119,17 @@ class App extends React.Component {
     })
   }
 
+  reloadBoard = () => {
+    this.fetchScores()
+  }
+
   render () {
     return (
       <div>
-        <NavBar handleLogin={this.handleLogin} handleSignUp={this.handleSignUp} user={this.state.user} deleteProfile={this.deleteProfile} handleLogOut={this.handleLogOut}/>
+        <NavBar handleLogin={this.handleLogin} handleSignUp={this.handleSignUp} user={this.state.user} deleteProfile={this.deleteProfile} handleLogOut={this.handleLogOut} reloadBoard={this.reloadBoard}/>
         <GameAreaContainer topTen={this.state.topTen}/>
       </div>
     );
-
   }
 }
 
