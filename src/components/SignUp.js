@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Login extends React.Component {
+class SignUp extends React.Component {
 
     state = {
         username:'',
@@ -13,6 +13,7 @@ class Login extends React.Component {
           [name]: value
         })
     }
+      
 
     render() {
         return (
@@ -21,12 +22,12 @@ class Login extends React.Component {
                     <img src={require("../welcome-to.png")} alt='' id="welcome-to"/>
                 </div>
                 <div className="login-signup-form-div">
-                    <form className="login-form" onSubmit={(event) => this.props.handleLogin(event, this.state)}>
-                    <input type="text" name="username" placeholder="User Name" value={this.state.username} onChange={this.handleChange} className="input-text"/>
+                    <form className="signup-form" onSubmit={(event) => this.props.handleSignUp(event, this.state)}>
+                        <input type="text" name="username" placeholder="User Name" value={this.state.username} onChange={this.handleChange} className="input-text"/>
                         <br/>
                         <input type="text" name="password" placeholder="Password" value={this.state.password} onChange={this.handleChange} className="input-text"/>
                         <br/>
-                        <input type="submit" name="submit" value="Log In" className="submit"/>
+                        <input type="submit" name="submit" value="Sign Up" className="submit"/>
                     </form>
                 </div>
             </div>
@@ -35,4 +36,4 @@ class Login extends React.Component {
 
 }
 
-export default Login;
+export default SignUp;

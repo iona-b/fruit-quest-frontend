@@ -1,11 +1,11 @@
 import React from 'react';
 import PlayerProfileCard from '../components/PlayerProfileCard';
 
-const ProfileContainer = () =>  {
+const ProfileContainer = (props) =>  {
 
   return (
     <div className="profile">
-      <PlayerProfileCard />
+      <PlayerProfileCard deleteProfile={props.deleteProfile} user={props.user}/>
     </div>
   );
 }

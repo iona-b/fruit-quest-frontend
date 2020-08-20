@@ -1,6 +1,7 @@
 import Phaser from 'phaser'
-import Level1 from './scenes/Level1'
+import Level2 from './scenes/Level2'
 import Level3 from './scenes/Level3'
+import Level4 from './scenes/Level4'
 import React from 'react'
 import { IonPhaser } from '@ion-phaser/react'
 
@@ -20,7 +21,7 @@ class Main extends React.Component {
       },
       type: Phaser.AUTO,
       scene: [
-        Level1
+        Level2
       ]
     }
   }
