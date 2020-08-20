@@ -1,24 +1,16 @@
 import React from 'react';
-<<<<<<< HEAD
 import Start from '../scenes/Start';
-import Level1 from '../scenes/Level1';
-// import Level2 from '../scenes/Level2';
+// import Level1 from '../scenes/Level1';
+import Level2 from '../scenes/Level2';
 import Level3 from '../scenes/Level3';
 import Level4 from '../scenes/Level4';
+import Game from '../main.js';
+import Home from '../components/Home';
 import Login from '../components/Login';
+import SignUp from '../components/SignUp';
 import HowToPlay from '../components/HowToPlay';
 import Profile from '../containers/ProfileContainer';
 import NotFound from '../components/NotFound';
-=======
-import Start from '../scenes/Start.js';
-import Game from '../main.js';
-import Home from '../components/Home.js';
-import Login from '../components/Login.js';
-import SignUp from '../components/SignUp.js';
-import HowToPlay from '../components/HowToPlay.js';
-import Profile from '../containers/ProfileContainer.js';
-import NotFound from '../components/NotFound.js';
->>>>>>> master
 import {Route, Switch, Link, NavLink, withRouter} from 'react-router-dom'
 
 
@@ -30,7 +22,6 @@ class NavBar extends React.Component {
   renderHome = () => <Home user={this.props.user}/>
 
   render(){
-
     return (
       <div className="navbar">
         <Link to='/' >
@@ -41,36 +32,6 @@ class NavBar extends React.Component {
             <Link to='/' >
               <img src={require("../cherry-button.png")} alt='' className="navbar-buttons" id="home-button"/>
             </Link>
-<<<<<<< HEAD
-            <NavLink to='/howtoplay' className="navbar-links">How to Play</NavLink>
-         </div>
-         <div className="navbar-divs">
-          <Link to='/profile' >
-            <img src={require("../blueberry-button.png")} alt='' className="navbar-buttons" id="profile-button"/>
-          </Link>
-            <NavLink to='/profile' className="navbar-links">Profile</NavLink>
-         </div>
-         <div className="navbar-divs">
-         <Link to='/logout' >
-          <img src={require("../apple-button.png")} alt='' className="navbar-buttons" id="logout-button"/>
-        </Link>
-           <NavLink to='/logout' className="navbar-links">Logout</NavLink>
-         </div>
-      <Switch>
-        <Route exact path='/' component={Login}/>
-        <Route path='/start' component={Start}/>
-        <Route path='/levelone' component={Level1}/> 
-        {/* <Route path='/leveltwo' component={Level2}/>  */}
-        <Route path='/levelthree' component={Level3}/> 
-        <Route path='/levelfour' component={Level4}/> 
-        <Route path='/howtoplay' component={HowToPlay}/>
-        <Route path='/profile' component={Profile}/>
-        <Route path='/logout' exact component={null}/>
-        <Route component={NotFound}/>
-      </Switch>
-    </div>
-  );
-=======
             <NavLink to='/' exact className="navbar-links" id="home-link" >Home</NavLink>
           </div>
           ) : null }
@@ -112,7 +73,9 @@ class NavBar extends React.Component {
           <Route path='/login' component={this.renderLogin}/>
           <Route path='/signup' component={this.renderSignUp}/>
           <Route path='/start' component={Start}/>
-          <Route path='/play' component={Game}/>
+          <Route path='/leveltwo' component={Level2}/>
+          <Route path='/levelthree' component={Level3}/>
+          <Route path='/levelfour' component={Level4}/>
           <Route path='/howtoplay' component={HowToPlay}/>
           <Route path='/profile' component={this.renderProfile}/>
           <Route path='/logout' exact component={null}/>
@@ -121,7 +84,6 @@ class NavBar extends React.Component {
       </div>
     );
   }
->>>>>>> master
 }
 
 export default withRouter(NavBar);

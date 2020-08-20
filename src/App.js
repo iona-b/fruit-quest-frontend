@@ -1,19 +1,44 @@
-<<<<<<< HEAD
-import React, {useState, useEffect} from 'react';
-=======
 import React from 'react';
 import {withRouter} from 'react-router-dom'
->>>>>>> master
 import './App.css';
 import NavBar from './containers/NavBar.js';
 import GameAreaContainer from './containers/GameAreaContainer.js';
 
-<<<<<<< HEAD
 
-function App() {
-  const [topTen, setTopTen] = useState([])
+// function App() {
+//   const [topTen, setTopTen] = useState([])
 
-  const fetchScores = async () => {
+//   const fetchScores = async () => {
+//     let res = await fetch('http://localhost:3000/users')
+//     let json = await res.json()
+//     let userTotals = json.map(user=> {
+//       let userScores = user.scores.map(eachScore => eachScore.score)
+//       let total = userScores.reduce((a, b) => {
+//         return  a + b
+//       }, 0)
+//       return {name: user.username, total: total}
+//     })
+//     const sortedTotals = userTotals.sort((a, b) => {return b.total - a.total})
+//     setTopTen(sortedTotals.slice(0, 10))
+//   }
+
+//   useEffect(() => {
+//     fetchScores()
+//   }, [])
+// }
+
+// export default App;
+class App extends React.Component {
+
+  state={
+    user:{
+      id: 0,
+      username: "",
+    },
+    topTen: []
+  }
+
+  fetchScores = async () => {
     let res = await fetch('http://localhost:3000/users')
     let json = await res.json()
     let userTotals = json.map(user=> {
@@ -24,30 +49,13 @@ function App() {
       return {name: user.username, total: total}
     })
     const sortedTotals = userTotals.sort((a, b) => {return b.total - a.total})
-    setTopTen(sortedTotals.slice(0, 10))
+    this.setState({
+      topTen: sortedTotals.slice(0, 10)
+    })
   }
 
-  useEffect(() => {
-    fetchScores()
-  }, [])
-
-  return (
-    <div>
-      <NavBar />
-      <GameAreaContainer topTen={topTen} />
-    </div>
-  );
-}
-
-export default App;
-=======
-class App extends React.Component {
-
-  state={
-    user:{
-      id: 0,
-      username: "",
-    }
+  componentDidMount() {
+    this.fetchScores()
   }
 
   handleLogin = (event, userDetails) => {
@@ -126,17 +134,14 @@ class App extends React.Component {
   }
 
   render () {
-
     return (
       <div>
         <NavBar handleLogin={this.handleLogin} handleSignUp={this.handleSignUp} user={this.state.user} deleteProfile={this.deleteProfile} handleLogOut={this.handleLogOut}/>
-        <GameAreaContainer />
+        <GameAreaContainer topTen={this.state.topTen}/>
       </div>
     );
 
   }
-
 }
 
 export default withRouter(App)
->>>>>>> master
