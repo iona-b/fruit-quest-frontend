@@ -30,7 +30,7 @@ class Level1 extends Phaser.Scene {
         tileset.setCollisionByProperty({collides : true})
 
         //Character
-        this.guy = this.physics.add.sprite(20, 350, 'guy', 'run-1.png')
+        this.guy = this.physics.add.sprite(30, 350, 'guy', 'run-1.png')
         this.anims.create({
             key: 'guy-idle',
             frames: this.anims.generateFrameNames('guy', { start: 1, end: 11, prefix: 'idle-', suffix: '.png' }),
@@ -76,7 +76,7 @@ class Level1 extends Phaser.Scene {
         this.physics.add.overlap(this.guy, cherry, this.collectFruit, null, this)
 
         this.fruitScore = 0
-        this.text = this.add.text(570, 70, `Fruit: ${this.fruitScore}`, {
+        this.text = this.add.text(845, 20, `Fruit: ${this.fruitScore}`, {
             fontSize: '20px',
             fill: '#ffffff'
           });

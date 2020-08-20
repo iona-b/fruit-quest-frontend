@@ -8,7 +8,6 @@ class Level3 extends Phaser.Scene {
     }
 
     preload() {
-
         this.load.image('tiles', 'terrain.png')
         this.load.tilemapTiledJSON('map', 'level-3.json')
         this.load.atlas('guy', 'virtual-guy.png', 'virtual-guy.json')
@@ -76,15 +75,15 @@ class Level3 extends Phaser.Scene {
         this.physics.add.overlap(this.guy, melon, this.collectFruit, null, this)
 
         this.fruitScore = 0
-        this.text = this.add.text(850, 20, `Fruit: ${this.fruitScore}`, {
+        this.text = this.add.text(845, 20, `Fruit: ${this.fruitScore}`, {
             fontSize: '20px',
             fill: '#ffffff'
           });
         this.text.setScrollFactor(0);          
     }
     
-    collectFruit (player, strawberry) {
-        strawberry.disableBody(true, true)
+    collectFruit (player, melon) {
+        melon.disableBody(true, true)
         this.fruitScore ++
         this.text.setText(`Fruits: ${this.fruitScore}`)
         return false
@@ -106,7 +105,6 @@ class Level3 extends Phaser.Scene {
         }
     }
 }
-
 
 export default class LevelThree extends React.Component {
   state = {

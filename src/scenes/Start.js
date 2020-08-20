@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, withRouter} from 'react-router-dom'
 
 const StartScene = () => {
   return (
@@ -23,4 +23,4 @@ const StartScene = () => {
   )
 }
 
-export default StartScene
+export default withRouter(StartScene)
