@@ -4,6 +4,7 @@ import Start from '../scenes/Start';
 import Level2 from '../scenes/Level2';
 import Level3 from '../scenes/Level3';
 import Level4 from '../scenes/Level4';
+import GameOver from '../scenes/GameOver';
 import Game from '../main.js';
 import Home from '../components/Home';
 import Login from '../components/Login';
@@ -11,7 +12,7 @@ import SignUp from '../components/SignUp';
 import HowToPlay from '../components/HowToPlay';
 import Profile from '../containers/ProfileContainer';
 import NotFound from '../components/NotFound';
-import {Route, Switch, Link, NavLink, withRouter} from 'react-router-dom'
+import {Route, Switch, Link, NavLink, withRouter, Redirect} from 'react-router-dom'
 
 
 class NavBar extends React.Component {
@@ -23,7 +24,7 @@ class NavBar extends React.Component {
 
   render(){
     return (
-      <div className="navbar">
+      <div className="navbar" onClick={this.props.reloadBoard}>
         <Link to='/' >
           <img src={require("../fruit-quest-logo.png")} alt='' id="logo"/>
         </Link>
@@ -32,7 +33,7 @@ class NavBar extends React.Component {
             <Link to='/' >
               <img src={require("../cherry-button.png")} alt='' className="navbar-buttons" id="home-button"/>
             </Link>
-            <NavLink to='/' exact className="navbar-links" id="home-link" >Home</NavLink>
+            <NavLink to='/' exact className="navbar-links" id="home-link">Home</NavLink>
           </div>
           ) : null }
           {this.props.user.id !== 0 ? (
