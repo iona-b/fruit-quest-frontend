@@ -1,14 +1,14 @@
 /* Nav Bar */
 .navbar {
   background-color: #5F9EA0;
-  height: 150px;
+  height: 115px;
 }
 
 #logo {
   width: 250px;
-  margin-top: 15px;
+  margin-top: 3px;
   margin-right: 50px;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 
 .navbar-divs {
@@ -28,23 +28,30 @@
 }
 
 .navbar-buttons {
+  
   width: 75px;
+
 }
 
 /* Home */
 
 .login-welcome {
-  height: 250;
+  height: 250px;
   width: 1000px;
   background-color: #5F9EA0;
-  margin-top: 50px;
-  margin-left: 20px;
-  padding: 20px;
+  margin-top: 20px;
+  margin-left: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-bottom: 10px;
   text-align: center;
+  border-radius: 10px 10px 0px 0px;
 }
 
 #welcome-to {
   width: 500px;
+  position: relative;
+  top: -15px;
 }
 
 #login-form-header {
@@ -53,13 +60,88 @@
   color: white;
 }
 
-.login-form {
-  height: 300px;
+#login-signup-section {
+  height: 250px;
   width: 1000px;
   background-color: powderblue;
-  margin-left: 20px;
-  padding: 20px;
+  margin-left: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 15px;
+  padding-top: 15px;
+
+  display: flex;
+  justify-content: space-around;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.login-signup-divs {
+  position: relative;
+  top: 5px;
   text-align: center;
+  display: inline-block;
+}
+
+.login-signup-headings {
+  text-decoration: none; 
+  font-family: 'Raleway', sans-serif;
+  font-size: 25px;
+  color: white;
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+.login-signup-logos {
+  width: 200px;
+}
+
+#sign-up-div {
+  position: relative;
+  top: -8px;
+}
+
+#home-start-game-button {
+  margin-top: 30px;
+}
+
+
+/* Sign Up / Log In */
+
+.login-signup-form-div {
+  height: 250px;
+  width: 1000px;
+  background-color: powderblue;
+  margin-left: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 30px;
+  text-align: center;
+  border-radius: 0px 0px 10px 10px;
+}
+
+.input-text {
+  height: 30px;
+  width: 200px;
+  margin: 10px;
+  text-align: center;
+  border: solid;
+  border-radius: 5px;
+  border-color: #5F9EA0;
+}
+
+.submit {
+  height: 35px;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #5F9EA0;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  border: solid;
 }
 
 
@@ -70,29 +152,34 @@
 }
 
 #start-game-button {
-  height: 250px;
-  margin-left: 425px;
-  margin-top: 100px;
+  height: 200px;
+  margin-left: -420px;
+}
+
+.fruit-trail {
+  width: 500px;
+  margin-left: 250px;
 }
 
 /* Leader Board */
 
 .leader-board {
   float: right;
-  height: 620px;
+  height: 520px;
   width: 300px;
   background-color: #5F9EA0;
-  margin: 10px;
+  margin: 0px;
   padding: 10px;
   font-family: 'Raleway', sans-serif;
   text-align: center;
+  border-radius: 10px;
 }
 
 #leader-board-header {
   font-family: 'Raleway', sans-serif;
   font-size: 40px;
   color: white;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .leader-board-score-card-headings {
@@ -113,27 +200,31 @@
   height: 30px;
   display: table-row;
   width: 100px;
+  border-radius: 10px;
+  color: white;
 }
 
 .leader-board-player-details {
   padding-top: 7px;
   display: table-cell;
   width: 100px;
+  border-radius: 5px;
 }
 
 /* Profile */
 
 .profile {
-  height: 600px;
+  height: 500px;
   width: 1000px;
   background-color: powderblue;
-  margin-top: 50px;
-  margin-left: 20px;
+  margin-top: 20px;
+  margin-left: 10px;
   padding: 20px;
+  border-radius: 10px;
 }
 
 .player-profile-card {
-  height: 500px;
+  height: 400px;
   width: 960px;
   background-color: powderblue;
   margin-left: 20px;
@@ -145,6 +236,10 @@
   width: 200px;
   margin-left: 75px;
   padding-left: 15px;
+}
+
+#delete-profile-logo{
+  cursor: pointer;
 }
 
 .profile-sections {
@@ -174,13 +269,24 @@
 /* How To Play */
 
 .how-to-play {
-  height: 400px;
+  height: 500px;
   width: 1000px;
   background-color: powderblue;
-  margin-top: 50px;
-  margin-left: 20px;
+  margin-top: 20px;
+  margin-left: 10px;
   padding: 20px;
   text-align: center;
   justify-content: center;
   font-family: 'Raleway', sans-serif;
+  border-radius: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+#how-to-play-header {
+  font-size: 40px;
+}
+
+#how-to-play-text {
+  font-size: 30px;
 }

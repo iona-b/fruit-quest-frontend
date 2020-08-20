@@ -1,17 +1,19 @@
 import React from 'react'
-import {Route, Switch, Link,withRouter} from 'react-router-dom'
-import Main from '../main.js';
+import {Link, withRouter} from 'react-router-dom'
 
-const StartScene = () => {
+class StartScene extends React.Component {
 
-  return (
-    <div className='start'>
-      <Link to='/play' >
-        <img src={require("../start-game-button.png")} alt='' id="start-game-button"/>
-      </Link>
-    </div>
-  )
+  render() {
+      return (
+        <div className='start'>
+          <img src={require("../fruit-trail.png")} alt='' className="fruit-trail"/>
+          <Link to='/play' >
+            <img src={require("../start-game-button.png")} alt='' id="start-game-button"/>
+          </Link>
+        </div>
+      )
+    }
 
 }
 
-export default StartScene
+export default withRouter(StartScene)
