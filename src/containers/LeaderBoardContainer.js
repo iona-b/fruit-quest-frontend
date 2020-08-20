@@ -1,12 +1,11 @@
 import React from 'react';
 import LeaderBoardScoreCard from '../components/LeaderBoardScoreCard';
 
-const LeaderBoardContainer = () =>  {
-
+const LeaderBoardContainer = ({topTen}) =>  {
   return (
     <div className="leader-board">
       <h2 id="leader-board-header">Leader Board</h2>
-      <LeaderBoardScoreCard />
+      <LeaderBoardScoreCard topTen={topTen}/>
     </div>
   );
 }

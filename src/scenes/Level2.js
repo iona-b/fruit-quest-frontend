@@ -1,13 +1,13 @@
 import Phaser from 'phaser';
+import React from 'react'
+import { IonPhaser } from '@ion-phaser/react'
 
-export default class Level1 extends Phaser.Scene {
-    
+class Level1 extends Phaser.Scene {
     constructor(){
-        super('game')
+        super('level1')
     }
 
     preload() {
-
         this.load.image('tiles', 'terrain.png')
         this.load.tilemapTiledJSON('map', 'level-2.json')
         this.load.image('purple background', 'purple-background.png')
@@ -16,16 +16,14 @@ export default class Level1 extends Phaser.Scene {
 
         this.cursors = this.input.keyboard.createCursorKeys()
         this.scale.setGameSize(992, 608)
-
     }
 
     create() {
-
         // Map
         const map = this.make.tilemap({ key: 'map'})
 
         const background = map.addTilesetImage('purple-background', 'purple background', 16, 16)
-        const backgroundLayer = map.createStaticLayer('background', background)
+        map.createStaticLayer('background', background)
         
         const terrain = map.addTilesetImage('terrain', 'tiles', 16, 16)
         const tileset = map.createStaticLayer('terrain', terrain)
@@ -63,7 +61,6 @@ export default class Level1 extends Phaser.Scene {
         this.camera = this.cameras.main.startFollow(this.guy, true)
         this.camera.setBounds(0, 0, 1984, 608)
 
-
         // Objects
         const cherryLayer = map.getObjectLayer('fruit')['objects']
         const cherry = this.physics.add.staticGroup()
@@ -84,7 +81,6 @@ export default class Level1 extends Phaser.Scene {
             fill: '#ffffff'
           });
         this.text.setScrollFactor(0);
-
     }
 
     collectFruit (player, strawberry) {
@@ -95,25 +91,43 @@ export default class Level1 extends Phaser.Scene {
     }
 
     update() {
-
         if (this.cursors.left.isDown) {
-              this.guy.setVelocityX(-160)
-              this.guy.anims.play('guy-walking-left', true)
-          }
-          else if (this.cursors.right.isDown) {
-              this.guy.setVelocityX(160)
-              this.guy.anims.play('guy-walking-right', true)
-          } 
-          else {
-              this.guy.setVelocityX(0)
-  
-              this.guy.anims.play('guy-idle', true)
-          }
-  
-          if (this.cursors.space.isDown || this.cursors.up.isDown) {
-              this.guy.setVelocityY(-330)
-          }
+            this.guy.setVelocityX(-160)
+            this.guy.anims.play('guy-walking-left', true)
+        } else if (this.cursors.right.isDown) {
+            this.guy.setVelocityX(160)
+            this.guy.anims.play('guy-walking-right', true)
+        } else {
+            this.guy.setVelocityX(0)
+            this.guy.anims.play('guy-idle', true)
+        }
+        if (this.cursors.space.isDown || this.cursors.up.isDown) {
+            this.guy.setVelocityY(-330)
+        }
       } 
+}
 
+export default class LevelOne extends React.Component {
+  state = {
+    game: {
+      parent: 'game-container',
+      width: 1984,
+      height: 608,
+      physics: {
+        default: 'arcade',
+        arcade: {
+          gravity: { y: 1000 }
+        }
+      },
+      type: Phaser.AUTO,
+      scene: [Level1]
+    }
+  }
 
+  render() {
+    const { game } = this.state
+    return (
+      <IonPhaser game={game} />
+    )
+  }
 }

@@ -293,6 +293,10 @@
   font-weight: bold;
 }
 
+#arrow-keys {
+  width: 300px;
+}
+
 #how-to-play-header {
   font-size: 40px;
 }

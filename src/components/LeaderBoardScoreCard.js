@@ -1,6 +1,7 @@
 import React from 'react';
+import PlayerScoreCard from './PlayerScoreCard'
 
-const LeaderBoardScoreCard = () => {
+const LeaderBoardScoreCard = ({topTen}) => {
     return (
         <div>
             <div className="leader-board-score-card-headings">
@@ -8,21 +9,11 @@ const LeaderBoardScoreCard = () => {
                 <h4 className="leader-board-headings">Player</h4>
                 <h4 className="leader-board-headings">Points</h4>
             </div>
-            <div className="leader-board-score-card">
-                <h4 className="leader-board-player-details">#1</h4>
-                <h4 className="leader-board-player-details">Player</h4>
-                <h4 className="leader-board-player-details">50</h4>
-            </div>
-            <div className="leader-board-score-card">
-                <h4 className="leader-board-player-details">#2</h4>
-                <h4 className="leader-board-player-details">Player</h4>
-                <h4 className="leader-board-player-details">40</h4>
-            </div>
-            <div className="leader-board-score-card">
-                <h4 className="leader-board-player-details">#3</h4>
-                <h4 className="leader-board-player-details">Player</h4>
-                <h4 className="leader-board-player-details">20</h4>
-            </div>
+            {
+                topTen.map((user, index) => {
+                    return <PlayerScoreCard key={index+1} user={user} rank={index+1}/>
+                })
+            }
         </div>
     )
 }
