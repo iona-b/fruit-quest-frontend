@@ -1,6 +1,8 @@
 import Phaser from 'phaser';
 import React from 'react'
 import { IonPhaser } from '@ion-phaser/react'
+import {Redirect} from 'react-router-dom'
+
 
 class Level4 extends Phaser.Scene {
     constructor(){
@@ -85,30 +87,28 @@ class Level4 extends Phaser.Scene {
         });
         this.timerText.setScrollFactor(0);
         this.timeEvent = this.time.addEvent({ delay: 1000, callback: this.countdown, callbackScope: this, loop: true})
-    
-        // fetch('http://localhost3000/users/')
-        // .then(res => res.json())
-        // .then((data) => {
-        //   if(data.score < this.score) {
-        //     fetch(, {
-        //       method: 'PATCH',
-        //       headers: {
-        //         'Accept': 'application/json',
-        //         'Content-Type': 'application/json'
-        //       },
-        //       body: JSON.stringify({
-        //         'score': this.score
-        //       })
-        //     })
-        //   }
-        // })
     }
 
     countdown() {
         this.timeInSeconds -= 1
         this.timerText.setText(`Time left: ${this.timeInSeconds}`)
-        if(this.timeInSeconds===0) {
+        if(this.timeInSeconds===25) {
             this.timeEvent.paused = true
+            <Redirect to='/start' />
+            // fetch('http://localhost3000/users/', {
+            //     method: 'POST',
+            //     headers: {
+            //         'Accept': 'application/json',
+            //         'Content-Type': 'application/json'
+            //     },
+            //     body: JSON.stringify(
+            //         score: this.fruitScore,
+            //         user:
+            //         level: 
+            //     )
+            // }
+            // .then(res => res.json())
+            // .then((data) => )
         }
     }
     
@@ -156,7 +156,9 @@ export default class LevelFour extends React.Component {
   render() {
     const { game } = this.state
     return (
-      <IonPhaser game={game} />
+        <div className='active-game'>
+            <IonPhaser game={game} />
+        </div>
     )
   }
 }

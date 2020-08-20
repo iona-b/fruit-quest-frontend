@@ -174,7 +174,7 @@
 /* How To Play */
 
 .how-to-play {
-  height: 400px;
+  height: 600px;
   width: 1000px;
   background-color: powderblue;
   margin-top: 50px;
@@ -183,4 +183,11 @@
   text-align: center;
   justify-content: center;
   font-family: 'Raleway', sans-serif;
+  font-size: 25px;
+  color: white;
+  font-weight: bold;
+}
+
+#arrow-keys {
+  width: 300px;
 }
