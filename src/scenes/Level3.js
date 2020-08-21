@@ -115,7 +115,7 @@ class Level3 extends Phaser.Scene {
               body: JSON.stringify({
                   score: this.fruitScore,
                   user_id: userId,
-                  level_id: 2
+                  level_id: 8
               })
           })
           .then(res => res.json())
@@ -125,7 +125,7 @@ class Level3 extends Phaser.Scene {
                   fetch('http://localhost:3000/scores')
                   .then(res => res.json())
                   .then(json => {
-                      let scoreId = json.find(score => score.user_id == userId && score.level_id == 2).id
+                      let scoreId = json.find(score => score.user_id == userId && score.level_id == 8).id
                       fetch(`http://localhost:3000/scores/${scoreId}`, {
                           method: 'PATCH',
                           headers: {
@@ -146,10 +146,12 @@ class Level3 extends Phaser.Scene {
     }
 
     collectFruit (player, melon) {
+      if(this.timeInSeconds>=26) {
         melon.disableBody(true, true)
         this.fruitScore ++
         this.text.setText(`Fruits: ${this.fruitScore}`)
-        return false
+      }
+      return false
     }
 
     update() {

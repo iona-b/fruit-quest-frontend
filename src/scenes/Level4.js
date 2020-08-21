@@ -112,7 +112,6 @@ class Level4 extends Phaser.Scene {
                     .then(res => res.json())
                     .then(json => {
                         console.log(json)
-                        debugger
                         let scoreId = json.find(score => score.user_id == userId && score.level_id == 9).id
                         fetch(`http://localhost:3000/scores/${scoreId}`, {
                             method: 'PATCH',
