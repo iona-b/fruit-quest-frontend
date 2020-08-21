@@ -28,7 +28,7 @@ Fruit quest is an game application created using a Ruby on Rails backend and Rea
 
 ## Demo
 
-[Fruit Quest Demo]<iframe src='https://gfycat.com/ifr/RegalOnlyHumpbackwhale' frameborder='0' scrolling='no' allowfullscreen width='640' height='483'></iframe>
+<iframe src='https://gfycat.com/ifr/RegalOnlyHumpbackwhale' frameborder='0' scrolling='no' allowfullscreen width='640' height='483'></iframe>
 
 ## Built with
 * Ruby 2.6.1
