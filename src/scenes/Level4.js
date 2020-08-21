@@ -12,9 +12,12 @@ class Level4 extends Phaser.Scene {
         this.load.atlas('guy', 'virtual-guy.png', 'virtual-guy.json')
         this.load.image('tiles', 'terrain.png')
         this.load.image('blue background', 'blue-background.png')
+        this.load.atlas('banana objects', 'banana-objects.png', 'banana-objects.json')
         this.load.image('banana', 'banana.png')
         this.cursors = this.input.keyboard.createCursorKeys()
         this.scale.setGameSize(992, 608)
+        this.load.audio('times up', 'times-up.m4a')
+        this.load.audio('fruit collected', 'fruit-collected.m4a')
     }
 
     create() {
@@ -59,14 +62,23 @@ class Level4 extends Phaser.Scene {
         this.camera.setBounds(0, 0, 1984, 608)
 
         // Fruit
+
+        this.anims.create({
+            key: 'banana objects',
+            frames: this.anims.generateFrameNames('banana objects', { start: 1, end: 17, prefix: 'bananas-', suffix: '.png'}),
+            repeat: -1,
+            frameRate: 5
+        })
+
         const fruitLayer = map.getObjectLayer('fruits')['objects']
         const banana = this.physics.add.staticGroup()
         fruitLayer.forEach(object => {
-            let s = banana.create(object.x, object.y, 'banana')
+            let s = banana.create(object.x, object.y, 'banana objects')
             s.setScale(object.width/16, object.height/16); 
             s.setOrigin(0); 
             s.body.width = object.width; 
             s.body.height = object.height; 
+            s.play('banana objects', true) 
         })
         this.physics.add.overlap(this.guy, banana, this.collectFruit, null, this)
 
@@ -89,7 +101,8 @@ class Level4 extends Phaser.Scene {
     countdown() {
         this.timeInSeconds -= 1
         this.timerText.setText(`Time left: ${this.timeInSeconds}`)
-        if(this.timeInSeconds===25) {
+        if(this.timeInSeconds===0) {
+            this.sound.play('times up');
             this.timeEvent.paused = true
             let userId = localStorage.getItem('user_id')
             fetch('http://localhost:3000/scores', {
@@ -133,10 +146,11 @@ class Level4 extends Phaser.Scene {
     }
     
     collectFruit(player, banana) {
-        if(this.timeInSeconds>=26) {
+        if(this.timeInSeconds>=0) {
             banana.disableBody(true, true)
             this.fruitScore ++
             this.text.setText(`Fruits: ${this.fruitScore}`)
+            this.sound.play('fruit collected');
         }
         return false
     }

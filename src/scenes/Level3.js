@@ -16,6 +16,8 @@ class Level3 extends Phaser.Scene {
         this.load.image('melon', 'melon.png')
         this.cursors = this.input.keyboard.createCursorKeys()
         this.scale.setGameSize(992, 608)
+        this.load.audio('times up', 'times-up.m4a')
+        this.load.audio('fruit collected', 'fruit-collected.m4a')
     }
 
     create() {
@@ -60,7 +62,7 @@ class Level3 extends Phaser.Scene {
           key: 'melon objects',
           frames: this.anims.generateFrameNames('melon objects', { start: 1, end: 17, prefix: 'melon-', suffix: '.png'}),
           repeat: -1,
-          frameRate: 15
+          frameRate: 5
         })
 
         const fruitLayer = map.getObjectLayer('foods')['objects']
@@ -103,7 +105,8 @@ class Level3 extends Phaser.Scene {
     countdown() {
       this.timeInSeconds -= 1
       this.timerText.setText(`Time left: ${this.timeInSeconds}`)
-      if(this.timeInSeconds===25) {
+      if(this.timeInSeconds===0) {
+        this.sound.play('times up');
           this.timeEvent.paused = true
           let userId = localStorage.getItem('user_id')
           fetch('http://localhost:3000/scores', {
@@ -146,10 +149,11 @@ class Level3 extends Phaser.Scene {
     }
 
     collectFruit (player, melon) {
-      if(this.timeInSeconds>=26) {
+      if(this.timeInSeconds>=0) {
         melon.disableBody(true, true)
         this.fruitScore ++
         this.text.setText(`Fruits: ${this.fruitScore}`)
+        this.sound.play('fruit collected');
       }
       return false
     }

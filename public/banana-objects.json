@@ -1,0 +1,423 @@
+{
+  "frames": {
+    "bananas-7.png": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 12,
+        "h": 19
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 4,
+        "w": 12,
+        "h": 19
+      },
+      "sourceSize": {
+        "w": 19,
+        "h": 29
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "bananas-8.png": {
+      "frame": {
+        "x": 0,
+        "y": 19,
+        "w": 12,
+        "h": 19
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 2,
+        "w": 12,
+        "h": 19
+      },
+      "sourceSize": {
+        "w": 25,
+        "h": 26
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "bananas-9.png": {
+      "frame": {
+        "x": 0,
+        "y": 38,
+        "w": 12,
+        "h": 19
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 5,
+        "w": 12,
+        "h": 19
+      },
+      "sourceSize": {
+        "w": 28,
+        "h": 32
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "bananas-10.png": {
+      "frame": {
+        "x": 0,
+        "y": 57,
+        "w": 14,
+        "h": 16
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 5,
+        "w": 14,
+        "h": 16
+      },
+      "sourceSize": {
+        "w": 29,
+        "h": 29
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "bananas-11.png": {
+      "frame": {
+        "x": 12,
+        "y": 0,
+        "w": 14,
+        "h": 16
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 4,
+        "w": 14,
+        "h": 16
+      },
+      "sourceSize": {
+        "w": 27,
+        "h": 29
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "bananas-6.png": {
+      "frame": {
+        "x": 12,
+        "y": 16,
+        "w": 14,
+        "h": 16
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 4,
+        "w": 14,
+        "h": 16
+      },
+      "sourceSize": {
+        "w": 27,
+        "h": 26
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "bananas-12.png": {
+      "frame": {
+        "x": 12,
+        "y": 32,
+        "w": 16,
+        "h": 14
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 5,
+        "w": 16,
+        "h": 14
+      },
+      "sourceSize": {
+        "w": 26,
+        "h": 29
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "bananas-13.png": {
+      "frame": {
+        "x": 12,
+        "y": 46,
+        "w": 18,
+        "h": 11
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 10,
+        "w": 18,
+        "h": 11
+      },
+      "sourceSize": {
+        "w": 32,
+        "h": 32
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "bananas-16.png": {
+      "frame": {
+        "x": 26,
+        "y": 0,
+        "w": 16,
+        "h": 14
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 3,
+        "w": 16,
+        "h": 14
+      },
+      "sourceSize": {
+        "w": 29,
+        "h": 23
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "bananas-17.png": {
+      "frame": {
+        "x": 26,
+        "y": 14,
+        "w": 16,
+        "h": 14
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 3,
+        "y": 6,
+        "w": 16,
+        "h": 14
+      },
+      "sourceSize": {
+        "w": 24,
+        "h": 24
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "bananas-1.png": {
+      "frame": {
+        "x": 28,
+        "y": 28,
+        "w": 14,
+        "h": 14
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 2,
+        "w": 14,
+        "h": 14
+      },
+      "sourceSize": {
+        "w": 19,
+        "h": 21
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "bananas-2.png": {
+      "frame": {
+        "x": 0,
+        "y": 73,
+        "w": 14,
+        "h": 14
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 2,
+        "w": 14,
+        "h": 14
+      },
+      "sourceSize": {
+        "w": 23,
+        "h": 19
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "bananas-3.png": {
+      "frame": {
+        "x": 0,
+        "y": 87,
+        "w": 14,
+        "h": 14
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 4,
+        "w": 14,
+        "h": 14
+      },
+      "sourceSize": {
+        "w": 21,
+        "h": 21
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "bananas-4.png": {
+      "frame": {
+        "x": 0,
+        "y": 101,
+        "w": 14,
+        "h": 14
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 3,
+        "w": 14,
+        "h": 14
+      },
+      "sourceSize": {
+        "w": 23,
+        "h": 23
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "bananas-5.png": {
+      "frame": {
+        "x": 0,
+        "y": 115,
+        "w": 14,
+        "h": 14
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 9,
+        "y": 4,
+        "w": 14,
+        "h": 14
+      },
+      "sourceSize": {
+        "w": 33,
+        "h": 23
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "bananas-14.png": {
+      "frame": {
+        "x": 0,
+        "y": 129,
+        "w": 18,
+        "h": 11
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 8,
+        "y": 10,
+        "w": 18,
+        "h": 11
+      },
+      "sourceSize": {
+        "w": 35,
+        "h": 32
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "bananas-15.png": {
+      "frame": {
+        "x": 14,
+        "y": 57,
+        "w": 18,
+        "h": 11
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 9,
+        "w": 18,
+        "h": 11
+      },
+      "sourceSize": {
+        "w": 29,
+        "h": 29
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.6",
+    "image": "banana-objects.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 42,
+      "h": 140
+    },
+    "scale": 1
+  }
+}

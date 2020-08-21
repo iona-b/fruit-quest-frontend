@@ -1,0 +1,447 @@
+{
+  "frames": {
+    "pineapple-7.png": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 10,
+        "h": 21
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 5,
+        "w": 10,
+        "h": 21
+      },
+      "sourceSize": {
+        "w": 27,
+        "h": 31
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "pineapple-8.png": {
+      "frame": {
+        "x": 0,
+        "y": 21,
+        "w": 10,
+        "h": 21
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 4,
+        "w": 10,
+        "h": 21
+      },
+      "sourceSize": {
+        "w": 22,
+        "h": 30
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "pineapple-9.png": {
+      "frame": {
+        "x": 0,
+        "y": 42,
+        "w": 10,
+        "h": 21
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 1,
+        "w": 10,
+        "h": 21
+      },
+      "sourceSize": {
+        "w": 20,
+        "h": 27
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "pineapple-6.png": {
+      "frame": {
+        "x": 0,
+        "y": 63,
+        "w": 12,
+        "h": 19
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 3,
+        "w": 12,
+        "h": 19
+      },
+      "sourceSize": {
+        "w": 26,
+        "h": 28
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "pineapple-10.png": {
+      "frame": {
+        "x": 10,
+        "y": 0,
+        "w": 12,
+        "h": 18
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 4,
+        "w": 12,
+        "h": 18
+      },
+      "sourceSize": {
+        "w": 26,
+        "h": 28
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "pineapple-11.png": {
+      "frame": {
+        "x": 10,
+        "y": 18,
+        "w": 12,
+        "h": 18
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 4,
+        "w": 12,
+        "h": 18
+      },
+      "sourceSize": {
+        "w": 30,
+        "h": 28
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "pineapple-1.png": {
+      "frame": {
+        "x": 10,
+        "y": 36,
+        "w": 12,
+        "h": 17
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 5,
+        "w": 12,
+        "h": 17
+      },
+      "sourceSize": {
+        "w": 20,
+        "h": 29
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "pineapple-2.png": {
+      "frame": {
+        "x": 0,
+        "y": 82,
+        "w": 12,
+        "h": 17
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 2,
+        "w": 12,
+        "h": 17
+      },
+      "sourceSize": {
+        "w": 24,
+        "h": 25
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "pineapple-3.png": {
+      "frame": {
+        "x": 0,
+        "y": 99,
+        "w": 12,
+        "h": 17
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 7,
+        "w": 12,
+        "h": 17
+      },
+      "sourceSize": {
+        "w": 22,
+        "h": 31
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "pineapple-4.png": {
+      "frame": {
+        "x": 0,
+        "y": 116,
+        "w": 12,
+        "h": 17
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 3,
+        "w": 12,
+        "h": 17
+      },
+      "sourceSize": {
+        "w": 25,
+        "h": 27
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "pineapple-5.png": {
+      "frame": {
+        "x": 0,
+        "y": 133,
+        "w": 12,
+        "h": 17
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 6,
+        "y": 2,
+        "w": 12,
+        "h": 17
+      },
+      "sourceSize": {
+        "w": 28,
+        "h": 24
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "pineapple-12.png": {
+      "frame": {
+        "x": 0,
+        "y": 150,
+        "w": 12,
+        "h": 15
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 2,
+        "w": 12,
+        "h": 15
+      },
+      "sourceSize": {
+        "w": 24,
+        "h": 20
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "pineapple-16.png": {
+      "frame": {
+        "x": 0,
+        "y": 165,
+        "w": 12,
+        "h": 15
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 7,
+        "y": 3,
+        "w": 12,
+        "h": 15
+      },
+      "sourceSize": {
+        "w": 23,
+        "h": 21
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "pineapple-17.png": {
+      "frame": {
+        "x": 0,
+        "y": 180,
+        "w": 12,
+        "h": 15
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 5,
+        "w": 12,
+        "h": 15
+      },
+      "sourceSize": {
+        "w": 24,
+        "h": 24
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "pineapple.png": {
+      "frame": {
+        "x": 0,
+        "y": 195,
+        "w": 12,
+        "h": 15
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 2,
+        "y": 1,
+        "w": 12,
+        "h": 15
+      },
+      "sourceSize": {
+        "w": 16,
+        "h": 16
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "pineapple-13.png": {
+      "frame": {
+        "x": 0,
+        "y": 210,
+        "w": 14,
+        "h": 13
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 4,
+        "y": 2,
+        "w": 14,
+        "h": 13
+      },
+      "sourceSize": {
+        "w": 24,
+        "h": 20
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "pineapple-14.png": {
+      "frame": {
+        "x": 12,
+        "y": 53,
+        "w": 14,
+        "h": 13
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 1,
+        "w": 14,
+        "h": 13
+      },
+      "sourceSize": {
+        "w": 25,
+        "h": 16
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "pineapple-15.png": {
+      "frame": {
+        "x": 22,
+        "y": 0,
+        "w": 14,
+        "h": 13
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 5,
+        "y": 3,
+        "w": 14,
+        "h": 13
+      },
+      "sourceSize": {
+        "w": 21,
+        "h": 19
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    }
+  },
+  "meta": {
+    "app": "http://free-tex-packer.com",
+    "version": "0.6.6",
+    "image": "pineapple-objects.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 36,
+      "h": 223
+    },
+    "scale": 1
+  }
+}

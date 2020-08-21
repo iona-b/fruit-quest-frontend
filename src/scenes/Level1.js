@@ -2,18 +2,18 @@ import Phaser from 'phaser';
 import React from 'react'
 import { IonPhaser } from '@ion-phaser/react'
 
-class Level2 extends Phaser.Scene {
+class Level1 extends Phaser.Scene {
     constructor(){
         super('level1')
     }
 
     preload() {
         this.load.image('tiles', 'terrain.png')
-        this.load.tilemapTiledJSON('map', 'level-2.json')
-        this.load.image('purple background', 'purple-background.png')
+        this.load.tilemapTiledJSON('map', 'level-1.json')
+        this.load.image('green background', 'green-background.png')
         this.load.atlas('guy', 'virtual-guy.png', 'virtual-guy.json')
-        this.load.atlas('cherry objects', 'cherry-objects.png', 'cherry-objects.json')
-        this.load.image('cherry', 'cherry.png')
+        this.load.atlas('pineapple objects', 'pineapple-objects.png', 'pineapple-objects.json')
+        this.load.image('pineapple', 'pineapple.png')
         this.load.audio('times up', 'times-up.m4a')
         this.load.audio('fruit collected', 'fruit-collected.m4a')
 
@@ -25,7 +25,7 @@ class Level2 extends Phaser.Scene {
         // Map
         const map = this.make.tilemap({ key: 'map'})
 
-        const background = map.addTilesetImage('purple-background', 'purple background', 16, 16)
+        const background = map.addTilesetImage('green background', 'green background', 16, 16)
         map.createStaticLayer('background', background)
         
         const terrain = map.addTilesetImage('terrain', 'tiles', 16, 16)
@@ -67,25 +67,25 @@ class Level2 extends Phaser.Scene {
         // Objects
 
         this.anims.create({
-          key: 'cherry objects',
-          frames: this.anims.generateFrameNames('cherry objects', { start: 1, end: 16, prefix: 'cherry-', suffix: '.png'}),
+          key: 'pineapple objects',
+          frames: this.anims.generateFrameNames('pineapple objects', { start: 1, end: 17, prefix: 'pineapple-', suffix: '.png'}),
           repeat: -1,
-          frameRate: 10
+          frameRate: 8
         })
 
-        const cherryLayer = map.getObjectLayer('fruit')['objects']
-        const cherry = this.physics.add.staticGroup()
-        cherryLayer.forEach(object => {
-            let c = cherry.create(object.x, object.y, 'cherry objects')
+        const pineappleLayer = map.getObjectLayer('fruit')['objects']
+        const pineapple = this.physics.add.staticGroup()
+        pineappleLayer.forEach(object => {
+            let c = pineapple.create(object.x, object.y, 'pineapple objects')
             c.setScale(object.width/16, object.height/16); 
             c.setOrigin(0); 
             c.body.width = object.width; 
             c.body.height = object.height;
-            c.play('cherry objects', true) 
+            c.play('pineapple objects', true) 
         })
         
         // Object and Character Collision
-        this.physics.add.overlap(this.guy, cherry, this.collectFruit, null, this)
+        this.physics.add.overlap(this.guy, pineapple, this.collectFruit, null, this)
 
         this.fruitScore = 0
         this.text = this.add.text(845, 20, `Fruit: ${this.fruitScore}`, {
@@ -119,7 +119,7 @@ class Level2 extends Phaser.Scene {
               body: JSON.stringify({
                   score: this.fruitScore,
                   user_id: userId,
-                  level_id: 7
+                  level_id: 10
               })
           })
           .then(res => res.json())
@@ -129,7 +129,7 @@ class Level2 extends Phaser.Scene {
                   fetch('http://localhost:3000/scores')
                   .then(res => res.json())
                   .then(json => {
-                      let scoreId = json.find(score => score.user_id == userId && score.level_id == 7).id
+                      let scoreId = json.find(score => score.user_id == userId && score.level_id == 10).id
                       fetch(`http://localhost:3000/scores/${scoreId}`, {
                           method: 'PATCH',
                           headers: {
@@ -176,7 +176,7 @@ class Level2 extends Phaser.Scene {
       } 
 }
 
-export default class LevelTwo extends React.Component {
+export default class LevelOne extends React.Component {
   state = {
     game: {
       parent: 'game-container',
@@ -189,7 +189,7 @@ export default class LevelTwo extends React.Component {
         }
       },
       type: Phaser.AUTO,
-      scene: [Level2]
+      scene: [Level1]
     }
   }
 

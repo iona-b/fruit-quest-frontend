@@ -1,6 +1,6 @@
 import React from 'react';
 import Start from '../scenes/Start';
-// import Level1 from '../scenes/Level1';
+import Level1 from '../scenes/Level1';
 import Level2 from '../scenes/Level2';
 import Level3 from '../scenes/Level3';
 import Level4 from '../scenes/Level4';
@@ -72,6 +72,7 @@ class NavBar extends React.Component {
           <Route path='/login' component={this.renderLogin}/>
           <Route path='/signup' component={this.renderSignUp}/>
           <Route path='/start' component={Start}/>
+          <Route path='/levelone' component={Level1}/>
           <Route path='/leveltwo' component={Level2}/>
           <Route path='/levelthree' component={Level3}/>
           <Route path='/levelfour' component={Level4}/>
