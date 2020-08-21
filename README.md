@@ -28,7 +28,7 @@ Fruit quest is an game application created using a Ruby on Rails backend and Rea
 
 ## Demo
 
-[Fruit Quest Demo](https://gfycat.com/regalonlyhumpbackwhale)
+[Fruit Quest Demo]<iframe src='https://gfycat.com/ifr/RegalOnlyHumpbackwhale' frameborder='0' scrolling='no' allowfullscreen width='640' height='483'></iframe>
 
 ## Built with
 * Ruby 2.6.1
@@ -48,7 +48,7 @@ https://github.com/iona-b
 https://www.linkedin.com/in/iona-brabender/
 
 **Sprites**<br>
-Pixel Adventure 1
+Pixel Adventure 1<br>
 https://pixel-frog.itch.io/pixel-adventure-1
 
 ## License
