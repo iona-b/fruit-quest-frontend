@@ -91,7 +91,6 @@ class Level4 extends Phaser.Scene {
         this.timerText.setText(`Time left: ${this.timeInSeconds}`)
         if(this.timeInSeconds===25) {
             this.timeEvent.paused = true
-            console.log('id in Level4:', localStorage.getItem('user_id'))
             let userId = localStorage.getItem('user_id')
             fetch('http://localhost:3000/scores', {
                 method: 'POST',
@@ -124,10 +123,6 @@ class Level4 extends Phaser.Scene {
                             body: JSON.stringify({
                                 score: this.fruitScore
                             })
-                        })
-                        .then(res => res.json())
-                        .then(json => {
-                            // this.props.endGame()
                         })
                         .catch(err => console.log('Level4.js Score Patch Error:', err))
                     })

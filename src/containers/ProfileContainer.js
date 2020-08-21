@@ -5,7 +5,7 @@ const ProfileContainer = (props) =>  {
 
   return (
     <div className="profile">
-      <PlayerProfileCard deleteProfile={props.deleteProfile} user={props.user}/>
+      <PlayerProfileCard deleteProfile={props.deleteProfile} user={props.user} currentUserScores={props.currentUserScores}/>
     </div>
   );
 }
