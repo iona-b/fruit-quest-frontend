@@ -150,7 +150,7 @@ class Level1 extends Phaser.Scene {
     }
       
     collectFruit (player, cherry) {
-      if(this.timeInSeconds>=0) {
+      if(this.timeInSeconds>0) {
         cherry.disableBody(true, true)
         this.fruitScore ++
         this.text.setText(`Fruits: ${this.fruitScore}`)

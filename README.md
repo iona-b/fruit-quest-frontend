@@ -1,68 +1,56 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Fruit Quest 
 
-In the project directory, you can run:
+![fruit quest logo](./src/fruit-quest-logo.png)
 
-### `yarn start`
+## Description
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Fruit quest is an game application created using a Ruby on Rails backend and React frontend, in combination with the Phaser 3 game engine. Users can create a profile and play any of the four levels available. The aim of the game is to collect as many pieces of fruit as possible before the timer reaches 0. Users can view their personal high scores and total scores on their profile page, and can also make their way onto the leaderboard. 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Installation
+1. Fork and clone this frontend repository and navigate into the directory where you cloned the repository.
+2. Enter the command "npm install" in the terminal.
+3. Fork and clone backend repository from [here](https://github.com/iona-b/mod-4-project-backend). Navigate to the backend folder.
+4. Enter the command 'bundle install' in the terminal.
+5. Run "rails db:migrate" in the terminal.
+6. For testing data, in the ../db/seeds.rb file, uncomment the test data, and run "rails db:seed" in the terminal.
+7. Run "rails server" to begin server.
+8. Run "npm start" to view the website!
 
-### `yarn test`
+## Features
+* Sign up as a new user or login as a returning user
+* View game instructions via the how to play button 
+* Play levels 1-4 and collect as many fruits as possible
+* View your profile with your highest score and total score
+* View leaderboard with the highest top ten scores
+* Logout or delete account
+    * Deleting account will delete your scores
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Demo
 
-### `yarn build`
+![Fruit Quest Demo](https://gfycat.com/regalonlyhumpbackwhale)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Built with
+* Ruby 2.6.1
+* JavaScript
+* React 16.13.1
+* Phaser 3.24.1
+* Tiled Map Editor 1.4.2
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Credits
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Carly La**<br>
+https://github.com/carcarvroom
+https://www.linkedin.com/in/carlyla/
 
-### `yarn eject`
+**Iona Brabender**<br>
+https://github.com/iona-b
+https://www.linkedin.com/in/iona-brabender/
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Sprites**<br>
+Pixel Adventure 1
+https://pixel-frog.itch.io/pixel-adventure-1
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## License
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Please see license file included in the fruit quest frontend directory.
