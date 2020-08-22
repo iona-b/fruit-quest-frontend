@@ -3,7 +3,7 @@
 
 ## Description
 
-Fruit quest is an game application created using a Ruby on Rails backend and React frontend, in combination with the Phaser 3 game engine. Users can create a profile and play any of the four levels available. The aim of the game is to collect as many pieces of fruit as possible before the timer reaches 0. Users can view their personal high scores and total scores on their profile page, and can also make their way onto the leaderboard. 
+Fruit Quest is an game application created using a Ruby on Rails backend and React frontend, in combination with the Phaser 3 game engine. Users can create a profile and play any of the four levels available. The aim of the game is to collect as many pieces of fruit as possible before the timer reaches 0. Users can view their personal high scores and total scores on their profile page, and can also make their way onto the leaderboard. 
 
 ## Installation
 1. Fork and clone this frontend repository and navigate into the directory where you cloned the repository.
