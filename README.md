@@ -1,6 +1,4 @@
 
-# Fruit Quest 
-
 ![fruit quest logo](./src/fruit-quest-logo.png)
 
 ## Description
